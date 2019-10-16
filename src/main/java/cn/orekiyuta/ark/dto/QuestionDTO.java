@@ -1,12 +1,11 @@
-package cn.orekiyuta.ark.model;
+package cn.orekiyuta.ark.dto;
 
-import lombok.Data;
+import cn.orekiyuta.ark.model.User;
 
 /**
- * Created by orekiyuta on  2019/10/15 - 20:53
+ * Created by orekiyuta on  2019/10/16 - 14:40
  **/
-
-public class Question {
+public class QuestionDTO {
     private Integer id;
     private String title;
     private String description;
@@ -17,6 +16,7 @@ public class Question {
     private Integer viewCount;
     private Integer commentCount;
     private Integer likeCount;
+    private User user;
 
     public Integer getId() {
         return id;
@@ -96,5 +96,13 @@ public class Question {
 
     public void setLikeCount(Integer likeCount) {
         this.likeCount = likeCount;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

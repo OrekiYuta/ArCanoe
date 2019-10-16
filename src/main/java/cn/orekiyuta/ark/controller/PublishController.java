@@ -59,17 +59,18 @@ public class PublishController {
 
         User user1 = null;
         Cookie[] cookies = request.getCookies();
-        for (Cookie cookie : cookies) {
-            if(cookie.getName().equals("token")){
-                String token = cookie.getValue();
-                user1 = userMapper.findByToken(token);
-                if(user1 !=null) {
-                    request.getSession().setAttribute("user",user1);
+        if(cookies !=null && cookies.length!=0) {
+            for (Cookie cookie : cookies) {
+                if (cookie.getName().equals("token")) {
+                    String token = cookie.getValue();
+                    user1 = userMapper.findByToken(token);
+                    if (user1 != null) {
+                        request.getSession().setAttribute("user", user1);
+                    }
+                    break;
                 }
-                break;
             }
         }
-
         if(user1 == null) {
             model.addAttribute("error", "Please log in first!");
             return "publish";

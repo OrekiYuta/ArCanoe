@@ -1,8 +1,12 @@
 package cn.orekiyuta.ark.model;
 
+import lombok.Data;
+
 /**
  * Created by orekiyuta on  2019/10/12 - 20:19
  **/
+
+
 public class User {
     private Integer id;
     private String name;
@@ -10,6 +14,15 @@ public class User {
     private String token;
     private Long gmtCreate;
     private Long gmtModified;
+    private  String avatarUrl;
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
 
     public Integer getId() {
         return id;
