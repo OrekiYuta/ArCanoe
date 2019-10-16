@@ -1,5 +1,6 @@
 package cn.orekiyuta.ark.service;
 
+import cn.orekiyuta.ark.dto.PaginationDTO;
 import cn.orekiyuta.ark.dto.QuestionDTO;
 import cn.orekiyuta.ark.mapper.QuestionMapper;
 import cn.orekiyuta.ark.mapper.UserMapper;
@@ -25,9 +26,26 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
     
-    public List<QuestionDTO> list() {
-        List<Question> questions = questionMapper.list();
+    public PaginationDTO list(Integer page, Integer size) {
+
+
+        PaginationDTO paginationDTO = new PaginationDTO();
+        Integer totalCount = questionMapper.count();
+        paginationDTO.setPagination(totalCount,page,size);
+
+        if (page < 1){
+            page = 1;
+        }
+        if (page > paginationDTO.getTotalPage()){
+            page = paginationDTO.getTotalPage();
+        }
+
+        Integer offset=size * (page -1);
+
+        List<Question> questions = questionMapper.list(offset,size);
         List<QuestionDTO> questionDTOList=new ArrayList<>();
+
+
         for (Question question : questions) {
             User user=userMapper.findById(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
@@ -37,6 +55,8 @@ public class QuestionService {
             questionDTOList.add(questionDTO);
 
         }
-        return questionDTOList;
+
+        paginationDTO.setQuestions((questionDTOList));
+        return paginationDTO;
     }
 }
