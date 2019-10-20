@@ -19,5 +19,9 @@ body{
     font-size: 12px;
     font-weight: normal;
     color: #999999;
-    text-align: right;
+    float: right;
+}
+
+.profile .section{
+    margin-top: 20px;
 }
