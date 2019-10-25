@@ -1,9 +1,11 @@
 package cn.orekiyuta.ark;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("cn.orekiyuta,ark.mapper")
 public class ArkApplication {
 
     public static void main(String[] args) {
