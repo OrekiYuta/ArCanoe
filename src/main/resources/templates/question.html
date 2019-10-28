@@ -17,7 +17,7 @@
             <h3><span th:text="${question.title}"></span></h3>
             <span class="text-desc">
                   Author : <span th:text="${question.user.name}"></span> /
-                  Read : <span th:text="${question.viewCount}"></span> /
+                  Views : <span th:text="${question.viewCount}"></span> /
                   Release time :<span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd')}"></span>
             </span>
             <hr>

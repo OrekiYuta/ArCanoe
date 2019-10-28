@@ -4,6 +4,7 @@ import cn.orekiyuta.ark.dto.PaginationDTO;
 import cn.orekiyuta.ark.dto.QuestionDTO;
 import cn.orekiyuta.ark.exception.CustomizeErrorCode;
 import cn.orekiyuta.ark.exception.CustomizeException;
+import cn.orekiyuta.ark.mapper.QuestionExtMapper;
 import cn.orekiyuta.ark.mapper.QuestionMapper;
 import cn.orekiyuta.ark.mapper.UserMapper;
 import cn.orekiyuta.ark.model.Question;
@@ -29,6 +30,9 @@ public class QuestionService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private QuestionExtMapper questionExtMapper;
     
     public PaginationDTO list(Integer page, Integer size) {
 
@@ -139,7 +143,10 @@ public class QuestionService {
         if(question.getId() == null){
             question.setGmtCreate(System.currentTimeMillis());
             question.setGmtModified(question.getGmtCreate());
-            questionMapper.insert(question);
+//            question.setViewCount(0);
+//            question.setLikeCount(0);
+//            question.setCommentCount(0);
+            questionMapper.insertSelective(question);
         }else {
 //            question.setGmtModified(question.getGmtCreate());
             Question updateQuestion = new Question();
@@ -155,6 +162,15 @@ public class QuestionService {
                 throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
             }
         }
+
+    }
+
+    public void incView(Integer id) {
+
+        Question question = new Question();
+        question.setId(id);
+        question.setViewCount(1);
+        questionExtMapper.incView(question);
 
     }
 }
