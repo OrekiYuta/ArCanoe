@@ -5,4 +5,5 @@ package cn.orekiyuta.ark.exception;
  **/
 public interface ICustomizeErrorCode {
     String getMessage();
+    Integer getCode();
 }
