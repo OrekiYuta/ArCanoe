@@ -8,24 +8,48 @@
     <link rel="stylesheet" href="/css/ark.css"/>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+    <script src="/js/ark.js" type="application/javascript"></script>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
 <div class="container-fluid main profile">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h3><span th:text="${question.title}"></span></h3>
-            <span class="text-desc">
-                  Author : <span th:text="${question.user.name}"></span> /
-                  Views : <span th:text="${question.viewCount}"></span> /
-                  Release time :<span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd')}"></span>
-            </span>
-            <hr>
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}"></div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h3><span th:text="${question.title}"></span></h3>
+                <span class="text-desc">
+                      Author : <span th:text="${question.user.name}"></span> /
+                      Views : <span th:text="${question.viewCount}"></span> /
+                      Release time :<span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd')}"></span>
+                </span>
+                <hr>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}"></div>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <a th:href="@{'/publish/'+${question.id}}" class="ark-menu" th:if="${session.user !=null && session.user.id ==question.creator}">
                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit
                 </a>
+            </div>
+            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="comment_section">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object img-circle avatar-wh"
+                                 th:src="${question.user.avatarUrl}">
+                        </a>
+                    </div>
+                    <div class="media-body" >
+                        <h5 class="media-heading" >
+                            <span th:href="@{'/question/'+${question.id}}" th:text="${question.user.name}"></span>
+                        </h5>
+                        </span>
+                    </div>
+                </div>
+                <input type="hidden" id="question_id" th:value="${question.id}">
+                <textarea rows="10" class="form-control comment" id="comment_content"></textarea>
+                <button type="button" class="btn btn-success btn-right" onclick="post()">Reply</button>
+            </div>
+
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

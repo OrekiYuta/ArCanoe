@@ -6,7 +6,7 @@ body{
     margin: 30px;
 }
 
-.btn-publish{
+.btn-right{
     float: right;
     margin-bottom: 15px;
 }
@@ -14,6 +14,9 @@ body{
 .avatar-wh{
     width: 40px;
     height: 40px;
+}
+.media-body{
+    padding-top: 10px;
 }
 .text-desc{
     font-size: 12px;
@@ -27,4 +30,8 @@ body{
 }
 .ark-menu{
     color: #999999;
+}
+
+.comment{
+    margin: 15px 0;
 }

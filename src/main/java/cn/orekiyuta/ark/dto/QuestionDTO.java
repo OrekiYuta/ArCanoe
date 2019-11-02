@@ -6,23 +6,23 @@ import cn.orekiyuta.ark.model.User;
  * Created by orekiyuta on  2019/10/16 - 14:40
  **/
 public class QuestionDTO {
-    private Integer id;
+    private Long id;
     private String title;
     private String description;
     private Long gmtCreate;
     private Long gmtModified;
     private String tag;
-    private Integer creator;
+    private Long creator;
     private Integer viewCount;
     private Integer commentCount;
     private Integer likeCount;
     private User user;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -66,11 +66,11 @@ public class QuestionDTO {
         this.tag = tag;
     }
 
-    public Integer getCreator() {
+    public Long getCreator() {
         return creator;
     }
 
-    public void setCreator(Integer creator) {
+    public void setCreator(Long creator) {
         this.creator = creator;
     }
 

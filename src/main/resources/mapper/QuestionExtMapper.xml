@@ -22,7 +22,7 @@
   <update id="incCommentCount" parameterType="cn.orekiyuta.ark.model.Question">
     update QUESTION
     SET
-    COMMENT_COUNT = COMMENT_COUNT + #{coumentCount,jdbcType=INTEGER}
+    COMMENT_COUNT = COMMENT_COUNT + #{commentCount,jdbcType=INTEGER}
     where id = #{id}
   </update>
 </mapper>

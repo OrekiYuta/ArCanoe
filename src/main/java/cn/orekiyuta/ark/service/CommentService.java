@@ -10,6 +10,7 @@ import cn.orekiyuta.ark.model.Comment;
 import cn.orekiyuta.ark.model.Question;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Created by orekiyuta on  2019/11/1 - 16:46
@@ -26,11 +27,13 @@ public class CommentService {
     @Autowired
     private QuestionExtMapper questionExtMapper;
 
+    @Transactional
+    //事务，一套操作一并完成，避免了有部分操作独自完成
     public void insert(Comment comment) {
         if(comment.getParentId() == null || comment.getParentId() == 0){
             throw new CustomizeException(CustomizeErrorCode.TARGET_PARAM_NOT_FOUND);
         }
-        if(comment.getType() ==null || CommentTypeEnum.isExist(comment.getType())){
+        if(comment.getType() == null || !CommentTypeEnum.isExist(comment.getType())){
             throw new CustomizeException(CustomizeErrorCode.TYPE_PARAM_WRONG);
         }
         if(comment.getType() == CommentTypeEnum.COMMENT.getType()){
