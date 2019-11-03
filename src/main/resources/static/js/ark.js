@@ -2,6 +2,12 @@
 function post() {
     var questionId = $("#question_id").val();
     var content = $("#comment_content").val();
+
+    if(!content){
+        alert("Content can not be null");
+        return;
+    }
+
     $.ajax({
        type:"POST",
        url:"/comment",
@@ -13,7 +19,8 @@ function post() {
        }),
        success: function (response) {
            if(response.code == 200){
-               $("#comment_content").hide();
+               window.location.reload();
+               // $("#comment_content").hide();
            }else {
                if (response.code == 2003) {
                    var isAccepted = confirm(response.message);

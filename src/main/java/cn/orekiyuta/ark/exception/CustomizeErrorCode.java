@@ -10,7 +10,8 @@ public enum  CustomizeErrorCode implements ICustomizeErrorCode {
     NO_LOGIN(2003,"Please log in first"),
     SYS_ERROR(2004,"Service exception: ╮(╯_╰)╭"),
     TYPE_PARAM_WRONG(2005,"Comment type is incorrect or does not exist"),
-    COMMENT_NOT_FOUND(2006,"The replyed comment does not exist")
+    COMMENT_NOT_FOUND(2006,"The replyed comment does not exist"),
+    COMMENT_IS_EMPTY(2007,"The replyed comment can not be null")
     ;
 
     private String message;

@@ -14,22 +14,73 @@
 <div th:insert="~{navigation :: nav}"></div>
 <div class="container-fluid main profile">
     <div class="row">
+
+        <!--左正文-->
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h3><span th:text="${question.title}"></span></h3>
+
+            <!--问题展示和操作-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-margin" >
+                <h3 class="title-style"><span th:text="${question.title}"></span></h3>
                 <span class="text-desc">
                       Author : <span th:text="${question.user.name}"></span> /
                       Views : <span th:text="${question.viewCount}"></span> /
-                      Release time :<span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd')}"></span>
+                      Release time :<span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
                 </span>
-                <hr>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:text="${question.description}"></div>
+                <hr >
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 description-style" th:text="${question.description}"></div>
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <a th:href="@{'/publish/'+${question.id}}" class="ark-menu" th:if="${session.user !=null && session.user.id ==question.creator}">
                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit
                 </a>
             </div>
-            <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <!--回复数分割-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="pull-left">
+                    Replies : <span th:text="${question.commentCount}"></span>
+                </h4>
+                <span >.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°
+                      .·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°
+                      .·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°
+                </span>
+                <!--<hr>-->
+            </div>
+
+            <!--回复内容列表-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 comments" th:each="comment : ${comments}">
+                <div class="media">
+                    <div class="media-left">
+                        <a href="#">
+                            <img class="media-object img-circle avatar-wh"
+                                 th:src="${comment.user.avatarUrl}">
+                        </a>
+                    </div>
+                    <div class="media-body" >
+                        <h5 class="media-heading" >
+                            <span th:text="${comment.user.name}"></span>
+                        </h5>
+                        <div th:text="${comment.content}"></div>
+                        <div class="pull-right icon-desc">
+                            <span class="glyphicon glyphicon-thumbs-up icon-margin"></span>
+                            <span class="glyphicon glyphicon-comment icon-margin" ></span>
+                            <span  th:text="${#dates.format(comment.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--提交回复分割-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <h4 class="pull-left">Add a Reply </h4>
+                <span >.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°
+                      .·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°
+                      .·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°.·°∴ ☆·°
+                </span>
+                <!--<hr >-->
+            </div>
+
+            <!--填写回复-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="comment_section">
                 <div class="media">
                     <div class="media-left">
@@ -51,9 +102,11 @@
             </div>
 
         </div>
+
+        <!--右导航-->
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4>Initiator</h4>
+                <h4>Initiator</h4>
                 <div class="media">
                     <div class="media-left">
                         <a href="#">
@@ -65,13 +118,13 @@
                         <h5 class="media-heading" >
                             <span th:href="@{'/question/'+${question.id}}" th:text="${question.user.name}"></span>
                         </h5>
-                    </span>
+                        </span>
                     </div>
                 </div>
             </div>
             <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h4>Related questions</h4>
+                <h4>Related questions</h4>
             </div>
         </div>
     </div>
