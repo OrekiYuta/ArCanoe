@@ -43,6 +43,14 @@ body{
     margin: 15px 0;
 }
 
+.sub-comment{
+    border: 1px solid #eee;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+.sub-comment .btn{
+   margin: 5px 0;
+}
 .edit-margin{
     margin-bottom: 15px;
 }
@@ -58,13 +66,20 @@ body{
     margin-right: 7px;
     cursor: pointer;
 }
-
+.icon-count{
+    margin-left: -8px;
+    vertical-align: top;
+    cursor: pointer;
+}
+.icon-desc .active{
+    color: #499ef3;
+}
 .icon-desc .icon-margin:hover{
     color: #499ef3;
 }
 
 .comments{
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eeeeee;
+    padding-top: 15px;
+    /*margin-top: 15px;*/
+    border-top: 1px solid #eeeeee;
 }

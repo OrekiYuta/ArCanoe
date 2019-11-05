@@ -7,9 +7,12 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * Created by orekiyuta on  2019/11/1 - 16:34
  **/
-public class ResultDTO {
+public class ResultDTO<T> {
     private  Integer code;
     private  String message;
+    private T data;
+
+
 
     public static ResultDTO errorof(Integer code, String message){
         ResultDTO resultDTO = new ResultDTO();
@@ -29,7 +32,14 @@ public class ResultDTO {
     public static ResultDTO okof(){
         ResultDTO resultDTO = new ResultDTO();
         resultDTO.setCode(200);
-        resultDTO.setMessage("Success");
+        resultDTO.setMessage("Success-1");
+        return resultDTO;
+    }
+    public static <T> ResultDTO okof(T t){
+        ResultDTO resultDTO = new ResultDTO();
+        resultDTO.setCode(200);
+        resultDTO.setMessage("Success-2");
+        resultDTO.setData(t);
         return resultDTO;
     }
 
@@ -51,5 +61,11 @@ public class ResultDTO {
         this.message = message;
     }
 
+    public T getData() {
+        return data;
+    }
 
+    public void setData(T data) {
+        this.data = data;
+    }
 }
