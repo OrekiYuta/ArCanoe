@@ -26,12 +26,18 @@
                 </div>
 
                 <div class="media-body" >
-                    <h4 class="media-heading" th:text="${question.title}"></h4>
-
-                    <span class="text-desc"><br>
-                        Reply: <span th:text="${question.commentCount}"></span> /
-                        Views: <span th:text="${question.viewCount}"></span> /
-                        <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd')}"></span>
+                        <a th:href="@{'/question/'+${question.id}}">
+                            <h4 class="media-heading" th:text="${question.title}"></h4>
+                        </a>
+                    <br>
+                    <span class="text-desc">
+                         <a th:href="@{'/publish/'+${question.id}}" class="ark-menu "
+                            th:if="${session.user !=null && session.user.id ==question.creator}">
+                             <span class="glyphicon glyphicon-edit " aria-hidden="true"></span>Edit •
+                         </a>
+                        Reply: <span th:text="${question.commentCount}"></span> •
+                        Views: <span th:text="${question.viewCount}"></span> •
+                        <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
                     </span>
                 </div>
             </div>

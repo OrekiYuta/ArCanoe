@@ -22,6 +22,9 @@
                     <li th:if="${session.user !=null}">
                         <a href="/publish">Put question</a>
                     </li>
+                    <li th:if="${session.user !=null}">
+                        <a href="/profile/replies">Notice: <span class="badge">233</span></a>
+                    </li>
                     <li class="dropdown" th:if="${session.user != null}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <span th:text="${session.user.getName()}"></span>
@@ -29,10 +32,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="/profile/questions/">Issue</a></li>
-                            <!--<li><a href="#">Information</a></li>-->
                             <li><a href="/logout">Log out</a></li>
-                            <!--<li role="separator" class="divider"></li>-->
-                            <!--<li><a href="#">Separated link</a></li>-->
                         </ul>
                     </li>
                     <li th:if="${session.user == null}">

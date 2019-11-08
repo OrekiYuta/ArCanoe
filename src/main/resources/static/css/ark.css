@@ -83,3 +83,20 @@ body{
     /*margin-top: 15px;*/
     border-top: 1px solid #eeeeee;
 }
+.tag-text{
+    font-size: 100%;
+    margin: 3px;
+    cursor: pointer;
+    display: inline-block;;
+}
+.tag-tips{
+    padding: 0;
+    margin: 10px 0;
+}
+
+#selectTag{
+    display: none;
+}
+.contentTags{
+    margin: 10px;
+}
