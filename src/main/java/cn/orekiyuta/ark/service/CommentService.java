@@ -2,6 +2,8 @@ package cn.orekiyuta.ark.service;
 
 import cn.orekiyuta.ark.dto.CommentDTO;
 import cn.orekiyuta.ark.enums.CommentTypeEnum;
+import cn.orekiyuta.ark.enums.NotificationStatusEnum;
+import cn.orekiyuta.ark.enums.NotificationTypeEnum;
 import cn.orekiyuta.ark.exception.CustomizeErrorCode;
 import cn.orekiyuta.ark.exception.CustomizeException;
 import cn.orekiyuta.ark.mapper.*;
@@ -38,9 +40,12 @@ public class CommentService {
     @Autowired
     private CommentExtMapper commentExtMapper;
 
+    @Autowired
+    private NotificationMapper notificationMapper;
+
     @Transactional
     //事务，一套操作一并完成，避免了有部分操作独自完成
-    public void insert(Comment comment) {
+    public void insert(Comment comment, User commentator) {
         if(comment.getParentId() == null || comment.getParentId() == 0){
             throw new CustomizeException(CustomizeErrorCode.TARGET_PARAM_NOT_FOUND);
         }
@@ -53,12 +58,29 @@ public class CommentService {
             if(dbComment == null){
                 throw new CustomizeException(CustomizeErrorCode.COMMENT_NOT_FOUND);
             }
+
+            Question question = questionMapper.selectByPrimaryKey(dbComment.getParentId());
+            if(question == null){
+                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+            }
+
             commentMapper.insertSelective(comment);
             //增加评论数
             Comment parentComment = new Comment();
             parentComment.setId(comment.getParentId());
             parentComment.setCommentCount(1);
             commentExtMapper.incCommentCount(parentComment);
+            //创建通知
+//            Notification notification = new Notification();
+//            notification.setGmtCreate(System.currentTimeMillis());
+//            notification.setType(NotificationTypeEnum.REPLY_COMMENT.getType());
+//            notification.setOuterid(comment.getParentId());
+//            notification.setNotifier(comment.getCommentator());
+//            notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());
+//            notification.setReceiver(dbComment.getCommentator());
+//            notificationMapper.insert(notification);
+            createNotifiy(comment, dbComment.getCommentator(),
+                    commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_COMMENT, question.getId());
         }else {
             //回复问题
             Question question = questionMapper.selectByPrimaryKey(comment.getParentId());
@@ -68,7 +90,25 @@ public class CommentService {
             commentMapper.insertSelective(comment);
             question.setCommentCount(1);
             questionExtMapper.incCommentCount(question);
+            //创建通知
+            createNotifiy(comment,question.getCreator(),
+                    commentator.getName(),question.getTitle(),NotificationTypeEnum.REPLY_QUESTION, question.getId());
         }
+    }
+
+    private void createNotifiy(Comment comment, Long receiver, String notifierName,
+                               String outerTitle, NotificationTypeEnum notificationTypeEnum, Long outerId) {
+        Notification notification = new Notification();
+        notification.setGmtCreate(System.currentTimeMillis());
+        notification.setType(notificationTypeEnum.getType());
+        notification.setOuterid(outerId);
+        notification.setNotifier(comment.getCommentator());
+        notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());
+        notification.setReceiver(receiver);
+        notification.setNotifierName(notifierName);
+        notification.setOuterTitle(outerTitle);
+
+        notificationMapper.insert(notification);
     }
 
     public List<CommentDTO> listByTargetId(Long id, CommentTypeEnum type) {

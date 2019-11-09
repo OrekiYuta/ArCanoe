@@ -6,8 +6,8 @@ import java.util.List;
 /**
  * Created by orekiyuta on  2019/10/16 - 18:43
  **/
-public class PaginationDTO {
-    private List<QuestionDTO> questions;
+public class PaginationDTO<T> {
+    private List<T> data;
     private boolean showPrevious;
     private boolean showFirstPage;
     private boolean showNext;
@@ -16,20 +16,54 @@ public class PaginationDTO {
     private  List<Integer> pages = new ArrayList<>();
     private  Integer totalPage;
 
-    public Integer getTotalPage() {
-        return totalPage;
+    public void setPagination(Integer totalPage, Integer page) {
+
+
+        this.totalPage=totalPage;
+        this.page=page;
+
+        pages.add(page);
+        for(int i = 1;i <= 3 ; i++){
+            if(page - i > 0 ){
+                pages.add(0,page - i);
+            }
+            if(page + i <= totalPage){
+                pages.add(page + i);
+            }
+        }
+
+        if(page == 1){
+            showPrevious = false ;
+        }else{
+            showPrevious = true;
+        }
+
+        if(page ==totalPage){
+            showNext = false ;
+        }else {
+            showNext = true ;
+        }
+
+        if(pages.contains(1)){
+            showFirstPage = false;
+        }else {
+            showFirstPage = true;
+        }
+
+        if (pages.contains(totalPage)){
+            showEndPage = false;
+        }else {
+            showEndPage = true;
+        }
     }
 
-    public void setTotalPage(Integer totalPage) {
-        this.totalPage = totalPage;
+
+    public List<T> getData() {
+        return data;
     }
 
-    public List<QuestionDTO> getQuestions() {
-        return questions;
-    }
-
-    public void setQuestions(List<QuestionDTO> questions) {
-        this.questions = questions;
+    public void setData(List<T> data) {
+        this.data = data;
     }
 
     public boolean isShowPrevious() {
@@ -80,44 +114,11 @@ public class PaginationDTO {
         this.pages = pages;
     }
 
-    public void setPagination(Integer totalPage, Integer page) {
+    public Integer getTotalPage() {
+        return totalPage;
+    }
 
-
-        this.totalPage=totalPage;
-        this.page=page;
-
-        pages.add(page);
-        for(int i = 1;i <= 3 ; i++){
-            if(page - i > 0 ){
-                pages.add(0,page - i);
-            }
-            if(page + i <= totalPage){
-                pages.add(page + i);
-            }
-        }
-
-        if(page == 1){
-            showPrevious = false ;
-        }else{
-            showPrevious = true;
-        }
-
-        if(page ==totalPage){
-            showNext = false ;
-        }else {
-            showNext = true ;
-        }
-
-        if(pages.contains(1)){
-            showFirstPage = false;
-        }else {
-            showFirstPage = true;
-        }
-
-        if (pages.contains(totalPage)){
-            showEndPage = false;
-        }else {
-            showEndPage = true;
-        }
+    public void setTotalPage(Integer totalPage) {
+        this.totalPage = totalPage;
     }
 }
