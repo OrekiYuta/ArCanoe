@@ -98,6 +98,10 @@ public class CommentService {
 
     private void createNotifiy(Comment comment, Long receiver, String notifierName,
                                String outerTitle, NotificationTypeEnum notificationTypeEnum, Long outerId) {
+        //过滤自己的回复，避免自己回复通知自己
+        if (receiver == comment.getCommentator()){
+            return;
+        }
         Notification notification = new Notification();
         notification.setGmtCreate(System.currentTimeMillis());
         notification.setType(notificationTypeEnum.getType());
