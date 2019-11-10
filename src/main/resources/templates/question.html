@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="/css/ark.css"/>
+    <link rel="stylesheet" href="/css/editormd.preview.min.css"/>
     <script src="/js/jquery-3.4.1.min.js"></script>
     <script src="/js/bootstrap.min.js" type="application/javascript"></script>
     <script src="/js/ark.js" type="application/javascript"></script>
     <script src="/js/moment.js" type="application/javascript"></script>
+    <script src="/js/editormd.min.js" type="application/javascript"></script>
+    <script src="/js/lib/marked.min.js" type="application/javascript"></script>
+    <script src="/js/lib/prettify.min.js" type="application/javascript"></script>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
@@ -28,7 +32,18 @@
                       Release time :<span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
                 </span>
                 <hr >
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 description-style" th:text="${question.description}"></div>
+
+                <!--问题描述-->
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 description-style" id="question-view">
+                    <textarea style="display: none" th:text="${question.description}"></textarea>
+                </div>
+                <script type="text/javascript">
+                    $(function() {
+                         editormd.markdownToHTML("question-view", {
+                        });
+                    });
+                </script>
 
                 <!--分类标签行-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
