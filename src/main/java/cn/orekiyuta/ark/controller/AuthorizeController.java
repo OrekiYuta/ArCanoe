@@ -5,6 +5,7 @@ import cn.orekiyuta.ark.dto.GithubUser;
 import cn.orekiyuta.ark.model.User;
 import cn.orekiyuta.ark.provider.GithubProvider;
 import cn.orekiyuta.ark.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -62,6 +63,7 @@ public class AuthorizeController {
             response.addCookie(new Cookie("token",token));
             return "redirect:/";
         }else{
+
             return "redirect:/";
         }
 

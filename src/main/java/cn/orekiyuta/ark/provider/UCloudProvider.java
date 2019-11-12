@@ -28,16 +28,16 @@ public class UCloudProvider {
     @Value("${ucloud.ufile.private-key}")
     private String privateKey;
 
-    @Value("${ucloud,ufile.bucket-name}")
+    @Value("${ucloud.ufile.bucket-name}")
     private String bucketName;
 
-    @Value("${ucloud,ufile.region}")
+    @Value("${ucloud.ufile.region}")
     private String region;
 
-    @Value("${ucloud,ufile.proxySuffix}")
+    @Value("${ucloud.ufile.proxySuffix}")
     private String proxySuffix;
 
-    @Value("${ucloud,ufile.expires}")
+    @Value("${ucloud.ufile.expires}")
     private int expires;
 
 
