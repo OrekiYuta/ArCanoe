@@ -490,3 +490,49 @@
 2019-11-13 14:50:01.318 DEBUG 192516 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
 2019-11-13 14:50:01.318 DEBUG 192516 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
 2019-11-13 14:50:01.319 DEBUG 192516 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-13 14:51:26.982  INFO 192768 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-9RO5BES with PID 192768 (F:\MyGitHub\ArCanoe\target\classes started by OrekiYuta in F:\MyGitHub\ArCanoe)
+2019-11-13 14:51:26.984  INFO 192768 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
+2019-11-13 14:51:27.028  INFO 192768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-13 14:51:27.028  INFO 192768 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-13 14:51:28.198  INFO 192768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-11-13 14:51:28.220  INFO 192768 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-13 14:51:28.220  INFO 192768 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-11-13 14:51:28.329  INFO 192768 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-13 14:51:28.330  INFO 192768 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1302 ms
+2019-11-13 14:51:28.980  INFO 192768 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-13 14:51:29.048  INFO 192768 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-13 14:51:29.295  INFO 192768 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-13 14:51:29.351  INFO 192768 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
+2019-11-13 14:51:29.355  INFO 192768 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Started ArkApplication in 2.674 seconds (JVM running for 3.705)
+2019-11-13 14:51:31.792  INFO 192768 --- [http-nio-2222-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-13 14:51:31.793  INFO 192768 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-13 14:51:31.807  INFO 192768 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-11-13 14:51:31.858  INFO 192768 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-13 14:51:31.982  INFO 192768 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-13 14:51:31.989 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION WHERE title regexp ? 
+2019-11-13 14:51:32.007 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: (String)
+2019-11-13 14:51:32.023 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-13 14:51:32.027 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION WHERE title regexp ? order by gmt_create desc limit ?,? 
+2019-11-13 14:51:32.028 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==> Parameters: (String), 0(Integer), 7(Integer)
+2019-11-13 14:51:32.034 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : <==      Total: 7
+2019-11-13 14:51:32.034 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-13 14:51:32.036 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-13 14:51:32.037 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-13 14:51:32.042 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-13 14:51:32.042 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-13 14:51:32.042 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-13 14:51:32.043 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-13 14:51:32.043 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-13 14:51:32.044 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-13 14:51:32.044 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-13 14:51:32.044 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-13 14:51:32.045 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-13 14:51:32.045 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-13 14:51:32.045 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-13 14:51:32.046 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-13 14:51:32.046 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-13 14:51:32.047 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-13 14:51:32.047 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-13 14:51:32.047 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-13 14:51:32.047 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-13 14:51:32.047 DEBUG 192768 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
