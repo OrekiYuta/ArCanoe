@@ -48,7 +48,7 @@
                 <!--分类标签行-->
                 <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-                    <span  class="label label-info tag-text " th:each="tag:${question.tag.split('，')}">
+                    <span  class="label label-info tag-text " th:each="tag:${question.tag.split(',')}">
                         <span class="glyphicon glyphicon-tag"></span>
                         <span th:text="${tag}"></span>
                     </span>
