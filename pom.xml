@@ -31,11 +31,11 @@
             </activation>
         </profile>
         <profile>
-            <id>production</id>
+            <id>pro</id>
             <properties>
-                <db.url>mysqlurl</db.url>
-                <db.user>sa</db.user>
-                <db.password></db.password>
+                <db.url>jdbc:mysql://</db.url>
+                <db.user>root</db.user>
+                <db.password>xxx</db.password>
             </properties>
         </profile>
     </profiles>
@@ -118,7 +118,7 @@
                 <version>6.0.6</version>
                 <configuration>
                     <url>${db.url}</url>
-                    <user>${db.url}</user>
+                    <user>${db.user}</user>
                     <password>${db.password}</password>
                 </configuration>
                 <dependencies>
