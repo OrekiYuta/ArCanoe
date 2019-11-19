@@ -128,3 +128,12 @@
 2019-11-15 00:06:52.932 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
 2019-11-15 00:06:52.932 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 302(Long)
 2019-11-15 00:06:52.933 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2019-11-19 09:47:14.379  INFO 8700 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-AA0SQ33 with PID 8700 (G:\ArCanoe\target\classes started by OrekiYuta in G:\ArCanoe)
+2019-11-19 09:47:14.379  INFO 8700 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
+2019-11-19 09:47:14.428  INFO 8700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-19 09:47:14.428  INFO 8700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-19 09:47:15.698  INFO 8700 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-11-19 09:47:15.714  INFO 8700 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-19 09:47:15.714  INFO 8700 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-11-19 09:47:15.808  INFO 8700 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-19 09:47:15.808  INFO 8700 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1380 ms
