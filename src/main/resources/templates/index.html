@@ -40,7 +40,7 @@
                     <h4 class="media-heading" >
                         <a th:href="@{'/question/'+${question.id}}" th:text="${question.title} "></a>
                     </h4>
-                    <span th:text="${question.description}"></span>
+                    <!--<span th:text="${question.description}"></span>-->
                     <span class="text-desc"><br>
                         Reply: <span th:text="${question.commentCount}"></span>  •
                         Views: <span th:text="${question.viewCount}"></span>  •
@@ -78,8 +78,12 @@
             </nav>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <h3>Hot dot</h3>
-            Test
+            <h3>Problem initiation guide</h3>
+            <ul>
+                <li>Question title: Please describe your issue in a streamlined language, no more than 25 words.</li>
+                <li>Question Supplement: Supplement your question details in detail, and make sure the problem description is clear and intuitive, and provide some relevant information.</li>
+                <li>Select tags: Select one or more suitable tags, separated by commas, each tag no more than 10 words.</li>
+            </ul>
         </div>
     </div>
 </div>
