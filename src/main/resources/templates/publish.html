@@ -1,21 +1,9 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Publish-ArkCanoe</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/bootstrap-theme.min.css"/>
-    <link rel="stylesheet" href="/css/ark.css"/>
-    <link rel="stylesheet" href="/css/editormd.min.css"/>
-
-
-    <script src="/js/jquery-3.4.1.min.js"></script>
-    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
-    <script src="/js/ark.js" type="application/javascript"></script>
-    <script src="/js/editormd.min.js" type="application/javascript"></script>
-    <script src="/js/lib/marked.min.js" type="application/javascript"></script>
-    <script src="/js/lib/prettify.min.js" type="application/javascript"></script>
-
+    <title>Publish-ArCanoe</title>
+    <head th:insert="~{import::head}"></head>
+    <head th:insert="~{import::markdown}"></head>
 </head>
 <body>
 <div th:insert="~{navigation :: nav}"></div>
