@@ -1,5 +1,6 @@
 package cn.orekiyuta.ark.controller;
 
+import cn.orekiyuta.ark.cache.HotTagCache;
 import cn.orekiyuta.ark.dto.PaginationDTO;
 import cn.orekiyuta.ark.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  * Created by orekiyuta on  2019/10/9 - 19:42
@@ -20,17 +22,24 @@ public class IndexController {
     @Autowired
     private QuestionService questionService;
 
+    @Autowired
+    private HotTagCache hotTagCache;
+
     @GetMapping("/")
     public  String index(HttpServletRequest request,
                          Model model,
                          @RequestParam(name = "page",defaultValue = "1") Integer page,
                          @RequestParam(name = "size",defaultValue = "7") Integer size,
-                         @RequestParam(name = "search",required = false) String search
+                         @RequestParam(name = "search",required = false) String search,
+                         @RequestParam(name = "tag",required = false) String tag
                             ){
 
-        PaginationDTO pagination =questionService.list(search,page,size);
+        PaginationDTO pagination =questionService.list(search,tag,page,size);
+        List<String> tags = hotTagCache.getHots();
         model.addAttribute("pagination",pagination);
         model.addAttribute("search",search);
+        model.addAttribute("tag",tag);
+        model.addAttribute("tags",tags);
         return "index";
     }
 }

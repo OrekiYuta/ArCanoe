@@ -1,139 +1,953 @@
-2019-11-15 00:00:55.630  INFO 207472 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-9RO5BES with PID 207472 (F:\MyGitHub\ArCanoe\target\classes started by OrekiYuta in F:\MyGitHub\ArCanoe)
-2019-11-15 00:00:55.636  INFO 207472 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
-2019-11-15 00:00:55.679  INFO 207472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-15 00:00:55.679  INFO 207472 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-15 00:00:57.778  INFO 207472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
-2019-11-15 00:00:57.799  INFO 207472 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-11-15 00:00:57.799  INFO 207472 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
-2019-11-15 00:00:57.908  INFO 207472 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-11-15 00:00:57.908  INFO 207472 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2189 ms
-2019-11-15 00:00:58.573  INFO 207472 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-11-15 00:00:58.647  INFO 207472 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2019-11-15 00:00:59.127  INFO 207472 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2019-11-15 00:00:59.197  INFO 207472 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
-2019-11-15 00:00:59.200  INFO 207472 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Started ArkApplication in 3.943 seconds (JVM running for 6.328)
-2019-11-15 00:02:53.891  INFO 207472 --- [http-nio-2222-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-11-15 00:02:53.891  INFO 207472 --- [http-nio-2222-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-11-15 00:02:53.898  INFO 207472 --- [http-nio-2222-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2019-11-15 00:02:53.956  INFO 207472 --- [http-nio-2222-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-11-15 00:02:54.120  INFO 207472 --- [http-nio-2222-exec-3] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-11-15 00:02:54.128 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
-2019-11-15 00:02:54.150 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
-2019-11-15 00:02:54.162 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
-2019-11-15 00:02:54.166 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
-2019-11-15 00:02:54.168 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
-2019-11-15 00:02:54.174 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : <==      Total: 7
-2019-11-15 00:02:54.175 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:02:54.176 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:02:54.177 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:02:54.182 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:02:54.182 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:02:54.182 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:02:54.183 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:02:54.183 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:02:54.183 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:02:54.184 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:02:54.184 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:02:54.184 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:02:54.184 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:02:54.184 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:02:54.185 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:02:54.185 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:02:54.185 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:02:54.185 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:02:54.185 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:02:54.185 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:02:54.186 DEBUG 207472 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:03:04.437 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
-2019-11-15 00:03:04.437 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 309(Long)
-2019-11-15 00:03:04.438 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
-2019-11-15 00:03:04.438 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:03:04.438 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:03:04.438 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:03:04.439 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
-2019-11-15 00:03:04.440 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 309(Long), Golang(String)
-2019-11-15 00:03:04.441 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 1
-2019-11-15 00:03:04.457 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
-2019-11-15 00:03:04.457 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 309(Long), 1(Integer)
-2019-11-15 00:03:04.457 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 0
-2019-11-15 00:03:04.458 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
-2019-11-15 00:03:04.460 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 309(Long)
-2019-11-15 00:03:04.464 DEBUG 207472 --- [http-nio-2222-exec-6] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
-2019-11-15 00:03:07.017 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
-2019-11-15 00:03:07.018 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 308(Long)
-2019-11-15 00:03:07.018 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
-2019-11-15 00:03:07.019 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:03:07.020 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:03:07.020 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:03:07.021 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
-2019-11-15 00:03:07.021 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 308(Long), Java(String)
-2019-11-15 00:03:07.022 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 5
-2019-11-15 00:03:07.024 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
-2019-11-15 00:03:07.024 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 308(Long), 1(Integer)
-2019-11-15 00:03:07.025 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 0
-2019-11-15 00:03:07.025 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
-2019-11-15 00:03:07.025 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 308(Long)
-2019-11-15 00:03:07.026 DEBUG 207472 --- [http-nio-2222-exec-10] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
-2019-11-15 00:03:10.217 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION WHERE title regexp ? 
-2019-11-15 00:03:10.217 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: (String)
-2019-11-15 00:03:10.220 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
-2019-11-15 00:03:10.221 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION WHERE title regexp ? order by gmt_create desc limit ?,? 
-2019-11-15 00:03:10.221 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : ==> Parameters: (String), 7(Integer), 7(Integer)
-2019-11-15 00:03:10.224 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : <==      Total: 1
-2019-11-15 00:03:10.224 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:03:10.224 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:03:10.225 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:03:11.484 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
-2019-11-15 00:03:11.485 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 302(Long)
-2019-11-15 00:03:11.485 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
-2019-11-15 00:03:11.486 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:03:11.486 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:03:11.486 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:03:11.487 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
-2019-11-15 00:03:11.487 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 302(Long), java,Golang(String)
-2019-11-15 00:03:11.487 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 0
-2019-11-15 00:03:11.488 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
-2019-11-15 00:03:11.488 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 302(Long), 1(Integer)
-2019-11-15 00:03:11.488 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 0
-2019-11-15 00:03:11.488 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
-2019-11-15 00:03:11.489 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 302(Long)
-2019-11-15 00:03:11.489 DEBUG 207472 --- [http-nio-2222-exec-8] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
-2019-11-15 00:03:21.064 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
-2019-11-15 00:03:21.064 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 302(Long)
-2019-11-15 00:03:21.065 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
-2019-11-15 00:03:21.065 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:03:21.065 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:03:21.065 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:03:21.066 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
-2019-11-15 00:03:21.066 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 302(Long), java,Golang(String)
-2019-11-15 00:03:21.066 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 0
-2019-11-15 00:03:21.067 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
-2019-11-15 00:03:21.067 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 302(Long), 1(Integer)
-2019-11-15 00:03:21.067 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 0
-2019-11-15 00:03:21.067 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
-2019-11-15 00:03:21.067 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 302(Long)
-2019-11-15 00:03:21.068 DEBUG 207472 --- [http-nio-2222-exec-1] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
-2019-11-15 00:06:52.928 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
-2019-11-15 00:06:52.928 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 302(Long)
-2019-11-15 00:06:52.929 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
-2019-11-15 00:06:52.929 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
-2019-11-15 00:06:52.929 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
-2019-11-15 00:06:52.930 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
-2019-11-15 00:06:52.930 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
-2019-11-15 00:06:52.930 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 302(Long), java,Golang(String)
-2019-11-15 00:06:52.930 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 0
-2019-11-15 00:06:52.931 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
-2019-11-15 00:06:52.931 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 302(Long), 1(Integer)
-2019-11-15 00:06:52.931 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 0
-2019-11-15 00:06:52.932 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
-2019-11-15 00:06:52.932 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 302(Long)
-2019-11-15 00:06:52.933 DEBUG 207472 --- [http-nio-2222-exec-9] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
-2019-11-19 09:47:14.379  INFO 8700 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-AA0SQ33 with PID 8700 (G:\ArCanoe\target\classes started by OrekiYuta in G:\ArCanoe)
-2019-11-19 09:47:14.379  INFO 8700 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
-2019-11-19 09:47:14.428  INFO 8700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2019-11-19 09:47:14.428  INFO 8700 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2019-11-19 09:47:15.698  INFO 8700 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
-2019-11-19 09:47:15.714  INFO 8700 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-11-19 09:47:15.714  INFO 8700 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
-2019-11-19 09:47:15.808  INFO 8700 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-11-19 09:47:15.808  INFO 8700 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1380 ms
+2019-11-22 21:54:18.301  INFO 45632 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-9RO5BES with PID 45632 (F:\MyGitHub\ArCanoe\target\classes started by OrekiYuta in F:\MyGitHub\ArCanoe)
+2019-11-22 21:54:18.306  INFO 45632 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
+2019-11-22 21:54:18.369  INFO 45632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 21:54:18.369  INFO 45632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 21:54:20.139  INFO 45632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-11-22 21:54:20.160  INFO 45632 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-22 21:54:20.161  INFO 45632 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-11-22 21:54:20.255  INFO 45632 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-22 21:54:20.255  INFO 45632 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1885 ms
+2019-11-22 21:54:20.856  INFO 45632 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 21:54:20.918  INFO 45632 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-22 21:54:21.142  INFO 45632 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-22 21:54:21.192  INFO 45632 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
+2019-11-22 21:54:21.195  INFO 45632 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Started ArkApplication in 3.256 seconds (JVM running for 5.062)
+2019-11-22 21:54:28.452  INFO 45632 --- [http-nio-2222-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 21:54:28.452  INFO 45632 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-22 21:54:28.457  INFO 45632 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-11-22 21:54:28.511  INFO 45632 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-22 21:54:28.655  INFO 45632 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-22 21:54:28.662 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 21:54:28.682 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 21:54:28.697 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 21:54:28.701 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 21:54:28.703 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 21:54:28.704 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 21:55:21.141 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ACCOUNT_ID = ? ) 
+2019-11-22 21:55:21.143 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 45684547(String)
+2019-11-22 21:55:21.143 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 0
+2019-11-22 21:55:21.144 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.ark.mapper.UserMapper.insert         : ==>  Preparing: insert into USER (ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL) values (?, ?, ?, ?, ?, ?, ?, ?) 
+2019-11-22 21:55:21.145 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.ark.mapper.UserMapper.insert         : ==> Parameters: null, 45684547(String), OrekiYuta(String), 412637c7-e0ea-4272-a0b6-e05c18f2f986(String), 1574430921144(Long), 1574430921144(Long), null, https://avatars1.githubusercontent.com/u/45684547?v=4(String)
+2019-11-22 21:55:21.151 DEBUG 45632 --- [http-nio-2222-exec-1] c.o.ark.mapper.UserMapper.insert         : <==    Updates: 1
+2019-11-22 21:55:21.159 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 21:55:21.160 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 21:55:21.161 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 21:55:21.166 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 21:55:21.167 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 21:55:21.171 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 21:55:21.172 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 21:55:21.172 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 21:55:21.173 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 21:55:21.173 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 21:55:21.173 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 21:55:21.174 DEBUG 45632 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 21:55:21.229 DEBUG 45632 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 21:55:21.229 DEBUG 45632 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 21:55:21.230 DEBUG 45632 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 21:55:21.230 DEBUG 45632 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 21:55:21.230 DEBUG 45632 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 21:55:21.231 DEBUG 45632 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 21:55:21.232 DEBUG 45632 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 21:55:21.232 DEBUG 45632 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 21:55:21.233 DEBUG 45632 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 21:55:21.233 DEBUG 45632 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 21:55:21.234 DEBUG 45632 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 21:55:21.234 DEBUG 45632 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 21:55:21.234 DEBUG 45632 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 21:55:21.234 DEBUG 45632 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 21:55:21.234 DEBUG 45632 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 21:55:21.236 DEBUG 45632 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 21:55:21.236 DEBUG 45632 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 21:55:21.236 DEBUG 45632 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 21:55:21.237 DEBUG 45632 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 21:55:21.237 DEBUG 45632 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 21:55:21.238 DEBUG 45632 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 21:55:21.238 DEBUG 45632 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 21:55:21.238 DEBUG 45632 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 21:55:21.238 DEBUG 45632 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 21:55:21.238 DEBUG 45632 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 21:55:21.238 DEBUG 45632 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 21:55:21.239 DEBUG 45632 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 21:55:21.240 DEBUG 45632 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 21:55:21.240 DEBUG 45632 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 21:55:21.241 DEBUG 45632 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 21:55:21.336 DEBUG 45632 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 21:55:21.337 DEBUG 45632 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 21:55:21.338 DEBUG 45632 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 21:55:21.339 DEBUG 45632 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 21:55:21.339 DEBUG 45632 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 21:55:21.340 DEBUG 45632 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:07.416  INFO 69444 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-9RO5BES with PID 69444 (F:\MyGitHub\ArCanoe\target\classes started by OrekiYuta in F:\MyGitHub\ArCanoe)
+2019-11-22 22:40:07.419  INFO 69444 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
+2019-11-22 22:40:07.472  INFO 69444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 22:40:07.472  INFO 69444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 22:40:08.540  INFO 69444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-11-22 22:40:08.558  INFO 69444 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-22 22:40:08.558  INFO 69444 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-11-22 22:40:08.650  INFO 69444 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-22 22:40:08.651  INFO 69444 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1179 ms
+2019-11-22 22:40:09.226  INFO 69444 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 22:40:09.281  INFO 69444 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-22 22:40:09.490  INFO 69444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-22 22:40:09.542  INFO 69444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
+2019-11-22 22:40:09.544  INFO 69444 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Started ArkApplication in 2.46 seconds (JVM running for 3.571)
+2019-11-22 22:40:26.762  INFO 69444 --- [http-nio-2222-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 22:40:26.762  INFO 69444 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-22 22:40:26.768  INFO 69444 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-11-22 22:40:26.815  INFO 69444 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-22 22:40:26.922  INFO 69444 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-22 22:40:26.928 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:26.946 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:26.959 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:26.967 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:26.969 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:26.972 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:26.991 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 22:40:26.992 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 22:40:26.993 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 22:40:26.994 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 22:40:26.995 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 22:40:26.996 DEBUG 69444 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 22:40:27.355 DEBUG 69444 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:27.355 DEBUG 69444 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:27.355 DEBUG 69444 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:27.355 DEBUG 69444 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:27.355 DEBUG 69444 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:27.356 DEBUG 69444 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:27.356 DEBUG 69444 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:27.356 DEBUG 69444 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:27.356 DEBUG 69444 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:27.356 DEBUG 69444 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:27.356 DEBUG 69444 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:27.357 DEBUG 69444 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:27.357 DEBUG 69444 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:27.358 DEBUG 69444 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:27.359 DEBUG 69444 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:27.359 DEBUG 69444 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:27.359 DEBUG 69444 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:27.360 DEBUG 69444 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:27.362 DEBUG 69444 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:27.362 DEBUG 69444 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:27.362 DEBUG 69444 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:27.499 DEBUG 69444 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:27.500 DEBUG 69444 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:27.500 DEBUG 69444 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:27.501 DEBUG 69444 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:27.502 DEBUG 69444 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:27.503 DEBUG 69444 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:29.836 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 22:40:29.837 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 412637c7-e0ea-4272-a0b6-e05c18f2f986(String)
+2019-11-22 22:40:29.838 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 22:40:29.839 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 22:40:29.839 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 22:40:29.840 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 22:40:29.848 DEBUG 69444 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 22:40:29.848 DEBUG 69444 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 22:40:29.849 DEBUG 69444 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 22:40:29.849 DEBUG 69444 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 22:40:29.849 DEBUG 69444 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 22:40:29.849 DEBUG 69444 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 22:41:00.150 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 22:41:00.151 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 22:41:00.151 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 22:41:00.151 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 22:41:00.151 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 22:41:00.152 DEBUG 69444 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:08:06.844  INFO 69224 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-9RO5BES with PID 69224 (F:\MyGitHub\ArCanoe\target\classes started by OrekiYuta in F:\MyGitHub\ArCanoe)
+2019-11-22 23:08:06.847  INFO 69224 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
+2019-11-22 23:08:06.896  INFO 69224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 23:08:06.897  INFO 69224 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 23:08:08.158  INFO 69224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-11-22 23:08:08.178  INFO 69224 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-22 23:08:08.178  INFO 69224 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-11-22 23:08:08.261  INFO 69224 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-22 23:08:08.261  INFO 69224 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1364 ms
+2019-11-22 23:08:08.886  INFO 69224 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 23:08:08.944  INFO 69224 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-22 23:08:09.165  INFO 69224 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-22 23:08:09.222  INFO 69224 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
+2019-11-22 23:08:09.225  INFO 69224 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Started ArkApplication in 2.739 seconds (JVM running for 3.995)
+2019-11-22 23:13:03.036  INFO 69224 --- [http-nio-2222-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 23:13:03.036  INFO 69224 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-22 23:13:03.041  INFO 69224 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2019-11-22 23:13:03.088  INFO 69224 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-22 23:13:03.186  INFO 69224 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-22 23:13:03.192 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:13:03.207 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:13:03.219 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:13:03.225 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:13:03.229 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:13:03.230 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:13:32.200 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ACCOUNT_ID = ? ) 
+2019-11-22 23:13:32.202 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 45684547(String)
+2019-11-22 23:13:32.203 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.206 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.U.updateByExampleSelective       : ==>  Preparing: update USER SET NAME = ?, TOKEN = ?, GMT_CREATE = ?, AVATAR_URL = ? WHERE ( ID = ? ) 
+2019-11-22 23:13:32.207 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.U.updateByExampleSelective       : ==> Parameters: OrekiYuta(String), 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String), 1574435612203(Long), https://avatars1.githubusercontent.com/u/45684547?v=4(String), 1(Long)
+2019-11-22 23:13:32.212 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.U.updateByExampleSelective       : <==    Updates: 1
+2019-11-22 23:13:32.226 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:32.227 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:32.227 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.232 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:32.233 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:32.236 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:32.237 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:13:32.237 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:13:32.237 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:13:32.238 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:13:32.238 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:13:32.238 DEBUG 69224 --- [http-nio-2222-exec-9] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:13:32.285 DEBUG 69224 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:32.285 DEBUG 69224 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:32.286 DEBUG 69224 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:32.286 DEBUG 69224 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:32.286 DEBUG 69224 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.287 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:32.286 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:32.287 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:32.287 DEBUG 69224 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:32.287 DEBUG 69224 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:32.287 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:32.289 DEBUG 69224 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:32.289 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.290 DEBUG 69224 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.290 DEBUG 69224 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.290 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.290 DEBUG 69224 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:32.290 DEBUG 69224 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:32.291 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:32.292 DEBUG 69224 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:32.292 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:32.292 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:32.292 DEBUG 69224 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:32.293 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:32.293 DEBUG 69224 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:32.293 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:32.293 DEBUG 69224 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:32.294 DEBUG 69224 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:32.294 DEBUG 69224 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:32.294 DEBUG 69224 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:32.432 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:32.433 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:32.434 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:32.435 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:32.436 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:32.436 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:42.615 DEBUG 69224 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:13:42.615 DEBUG 69224 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 97e72d6a-b262-4aed-b37d-51c5c86ec93c(String)
+2019-11-22 23:13:42.616 DEBUG 69224 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:13:42.617 DEBUG 69224 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:13:42.617 DEBUG 69224 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:13:42.617 DEBUG 69224 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:13:42.626 DEBUG 69224 --- [http-nio-2222-exec-7] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:13:42.626 DEBUG 69224 --- [http-nio-2222-exec-7] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:13:42.626 DEBUG 69224 --- [http-nio-2222-exec-7] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:13:42.626 DEBUG 69224 --- [http-nio-2222-exec-7] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:13:42.627 DEBUG 69224 --- [http-nio-2222-exec-7] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:13:42.627 DEBUG 69224 --- [http-nio-2222-exec-7] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:14:03.630 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:14:03.631 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:14:03.631 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:14:03.631 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:14:03.631 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:14:03.632 DEBUG 69224 --- [http-nio-2222-exec-5] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:14:19.829 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:14:19.829 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:14:19.829 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:14:19.829 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:14:19.830 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:14:19.830 DEBUG 69224 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:14:49.081 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:14:49.081 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:14:49.081 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:14:49.081 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:14:49.082 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:14:49.082 DEBUG 69224 --- [http-nio-2222-exec-4] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:18:18.698  INFO 72336 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-9RO5BES with PID 72336 (F:\MyGitHub\ArCanoe\target\classes started by OrekiYuta in F:\MyGitHub\ArCanoe)
+2019-11-22 23:18:18.700  INFO 72336 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
+2019-11-22 23:18:18.752  INFO 72336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 23:18:18.752  INFO 72336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 23:18:20.050  INFO 72336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-11-22 23:18:20.074  INFO 72336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-22 23:18:20.075  INFO 72336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-11-22 23:18:20.175  INFO 72336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-22 23:18:20.176  INFO 72336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1424 ms
+2019-11-22 23:18:20.762  INFO 72336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 23:18:20.816  INFO 72336 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-22 23:18:21.022  INFO 72336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-22 23:18:21.072  INFO 72336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
+2019-11-22 23:18:21.075  INFO 72336 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Started ArkApplication in 2.74 seconds (JVM running for 3.918)
+2019-11-22 23:18:26.079  INFO 72336 --- [http-nio-2222-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 23:18:26.079  INFO 72336 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-22 23:18:26.086  INFO 72336 --- [http-nio-2222-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-11-22 23:18:26.139  INFO 72336 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-22 23:18:26.243  INFO 72336 --- [http-nio-2222-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-22 23:18:26.250 DEBUG 72336 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:18:26.264 DEBUG 72336 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:18:26.278 DEBUG 72336 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:18:26.281 DEBUG 72336 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:18:26.283 DEBUG 72336 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:18:26.284 DEBUG 72336 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:18:41.442  INFO 69060 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Starting ArkApplication on DESKTOP-9RO5BES with PID 69060 (F:\MyGitHub\ArCanoe\target\classes started by OrekiYuta in F:\MyGitHub\ArCanoe)
+2019-11-22 23:18:41.444  INFO 69060 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : No active profile set, falling back to default profiles: default
+2019-11-22 23:18:41.489  INFO 69060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-11-22 23:18:41.489  INFO 69060 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-11-22 23:18:42.605  INFO 69060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2222 (http)
+2019-11-22 23:18:42.623  INFO 69060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-11-22 23:18:42.624  INFO 69060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.26]
+2019-11-22 23:18:42.716  INFO 69060 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-11-22 23:18:42.717  INFO 69060 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1228 ms
+2019-11-22 23:18:43.264  INFO 69060 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-11-22 23:18:43.321  INFO 69060 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-11-22 23:18:43.557  INFO 69060 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-11-22 23:18:43.611  INFO 69060 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2222 (http) with context path ''
+2019-11-22 23:18:43.614  INFO 69060 --- [restartedMain] cn.orekiyuta.ark.ArkApplication          : Started ArkApplication in 2.485 seconds (JVM running for 3.478)
+2019-11-22 23:18:50.332  INFO 69060 --- [http-nio-2222-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-11-22 23:18:50.332  INFO 69060 --- [http-nio-2222-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-11-22 23:18:50.338  INFO 69060 --- [http-nio-2222-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2019-11-22 23:19:11.556  INFO 69060 --- [http-nio-2222-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-11-22 23:19:11.658  INFO 69060 --- [http-nio-2222-exec-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-11-22 23:19:11.664 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ACCOUNT_ID = ? ) 
+2019-11-22 23:19:11.692 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 45684547(String)
+2019-11-22 23:19:11.704 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:11.708 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.U.updateByExampleSelective       : ==>  Preparing: update USER SET NAME = ?, TOKEN = ?, GMT_CREATE = ?, AVATAR_URL = ? WHERE ( ID = ? ) 
+2019-11-22 23:19:11.709 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.U.updateByExampleSelective       : ==> Parameters: OrekiYuta(String), f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String), 1574435951706(Long), https://avatars1.githubusercontent.com/u/45684547?v=4(String), 1(Long)
+2019-11-22 23:19:11.713 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.U.updateByExampleSelective       : <==    Updates: 1
+2019-11-22 23:19:11.726 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:11.726 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:11.727 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:11.732 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:11.734 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:11.736 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:11.742 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:19:11.742 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:19:11.743 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:19:11.743 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:19:11.744 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:19:11.744 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.Q.selectBySearch                 : <==      Total: 0
+2019-11-22 23:19:12.058 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:12.058 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:12.058 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:12.058 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:12.059 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:12.059 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:12.059 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:12.059 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:12.059 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:12.060 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:12.060 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:12.060 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:12.062 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:12.062 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:12.062 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:12.062 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:12.063 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:12.063 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:12.063 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:12.063 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:12.063 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:12.064 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:12.064 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:12.064 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:12.064 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:12.064 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:12.064 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:12.065 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:12.065 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:12.067 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:12.154 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:12.155 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:12.156 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:12.157 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:12.158 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:12.158 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.707 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.708 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.708 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.709 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.709 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.709 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.753 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.753 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.754 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.754 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.754 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.754 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.754 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.754 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.754 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.755 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.756 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.757 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.757 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.757 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.757 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.757 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.758 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.758 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.759 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.758 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.759 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.759 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.760 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.760 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.760 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.760 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.765 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.765 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.765 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.765 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.766 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.766 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.769 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.769 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.769 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.770 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.770 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.770 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.770 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.771 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.771 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.771 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.771 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.771 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.771 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.771 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.772 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.772 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.772 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.772 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.873 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.873 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.873 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.874 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.874 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.874 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.932 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.932 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.932 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.932 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.932 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.932 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.932 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.933 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.933 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.933 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.933 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.934 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.934 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.934 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.935 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.935 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.935 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.933 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.934 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.936 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.936 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.937 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.937 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.938 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.936 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.941 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.943 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.944 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.945 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.945 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:17.995 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:17.995 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:17.995 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:17.996 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:17.996 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:17.997 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:18.027 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:18.027 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:18.028 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:18.028 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:18.028 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:18.028 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:18.095 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:18.095 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:18.096 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:18.096 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:18.097 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:18.097 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:18.129 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:18.129 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:18.129 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:18.130 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:18.130 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:18.130 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:18.139 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:18.139 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:18.139 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:18.140 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:18.140 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:18.140 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.436 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.436 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.436 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.437 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.437 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.438 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.441 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.QuestionMapper.insertSelective   : ==>  Preparing: insert into QUESTION ( TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, TAG, DESCRIPTION ) values ( ?, ?, ?, ?, ?, ? ) 
+2019-11-22 23:19:33.443 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.QuestionMapper.insertSelective   : ==> Parameters: 测试一下Springboot(String), 1574435973440(Long), 1574435973440(Long), 1(Long), Java(String), java.io.StringReader@39abfb4d(StringReader)
+2019-11-22 23:19:33.444 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.QuestionMapper.insertSelective   : <==    Updates: 1
+2019-11-22 23:19:33.449 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.449 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.449 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.450 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.450 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.450 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.451 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:19:33.451 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:19:33.451 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:19:33.451 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:19:33.451 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:19:33.454 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.Q.selectBySearch                 : <==      Total: 1
+2019-11-22 23:19:33.454 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-22 23:19:33.454 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-22 23:19:33.454 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-22 23:19:33.498 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.498 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.498 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.498 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.498 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.499 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.500 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:33.600 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:33.601 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:33.601 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:33.602 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:33.602 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:33.602 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.879 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.879 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.880 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.880 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.880 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.880 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.882 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
+2019-11-22 23:19:35.882 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 1(Long)
+2019-11-22 23:19:35.883 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
+2019-11-22 23:19:35.883 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-22 23:19:35.883 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-22 23:19:35.883 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-22 23:19:35.884 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
+2019-11-22 23:19:35.885 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 1(Long), Java(String)
+2019-11-22 23:19:35.885 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 0
+2019-11-22 23:19:35.889 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
+2019-11-22 23:19:35.890 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 1(Long), 1(Integer)
+2019-11-22 23:19:35.890 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 0
+2019-11-22 23:19:35.890 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
+2019-11-22 23:19:35.892 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 1(Long)
+2019-11-22 23:19:35.893 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2019-11-22 23:19:35.942 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.942 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.942 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.942 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.942 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.943 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.944 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.944 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.945 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.945 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.945 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.945 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.945 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.946 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.952 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.953 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:35.954 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.954 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:35.954 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.954 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:35.954 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:35.954 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:36.054 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:36.055 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:36.055 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:36.056 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:36.056 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:36.056 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.342 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.343 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.343 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.344 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.344 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.344 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.389 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
+2019-11-22 23:19:41.389 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 1(Long)
+2019-11-22 23:19:41.389 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
+2019-11-22 23:19:41.390 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.CommentMapper.insertSelective    : ==>  Preparing: insert into COMMENT ( PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2019-11-22 23:19:41.391 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.CommentMapper.insertSelective    : ==> Parameters: 1(Long), 1(Integer), 1(Long), 1574435981383(Long), 1574435981383(Long), 0(Long), 可以(String)
+2019-11-22 23:19:41.392 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.CommentMapper.insertSelective    : <==    Updates: 1
+2019-11-22 23:19:41.392 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.Q.incCommentCount                : ==>  Preparing: update QUESTION SET COMMENT_COUNT = COMMENT_COUNT + ? where id = ? 
+2019-11-22 23:19:41.392 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.Q.incCommentCount                : ==> Parameters: 1(Integer), 1(Long)
+2019-11-22 23:19:41.392 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.Q.incCommentCount                : <==    Updates: 1
+2019-11-22 23:19:41.440 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.440 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.441 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.441 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.441 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.441 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.441 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
+2019-11-22 23:19:41.442 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 1(Long)
+2019-11-22 23:19:41.442 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
+2019-11-22 23:19:41.442 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-22 23:19:41.442 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-22 23:19:41.443 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-22 23:19:41.443 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
+2019-11-22 23:19:41.443 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 1(Long), Java(String)
+2019-11-22 23:19:41.443 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 0
+2019-11-22 23:19:41.444 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
+2019-11-22 23:19:41.444 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 1(Long), 1(Integer)
+2019-11-22 23:19:41.445 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 1
+2019-11-22 23:19:41.446 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ID in ( ? ) ) 
+2019-11-22 23:19:41.447 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 1(Long)
+2019-11-22 23:19:41.447 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.451 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
+2019-11-22 23:19:41.452 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 1(Long)
+2019-11-22 23:19:41.452 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.496 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.497 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.501 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.502 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.502 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.508 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.508 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.508 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.508 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.509 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.510 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.510 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.510 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.510 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.513 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.514 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.514 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:41.602 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:41.602 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:41.603 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:41.603 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:41.604 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:41.604 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:42.787 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:42.787 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:42.787 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:42.788 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:42.788 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:42.788 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:42.789 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
+2019-11-22 23:19:42.790 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 1(Long), 2(Integer)
+2019-11-22 23:19:42.791 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 0
+2019-11-22 23:19:46.050 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.050 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.050 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.050 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.051 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.051 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.051 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.C.selectByPrimaryKey             : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT where ID = ? 
+2019-11-22 23:19:46.052 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.C.selectByPrimaryKey             : ==> Parameters: 1(Long)
+2019-11-22 23:19:46.052 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.C.selectByPrimaryKey             : <==      Total: 1
+2019-11-22 23:19:46.052 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
+2019-11-22 23:19:46.052 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 1(Long)
+2019-11-22 23:19:46.052 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
+2019-11-22 23:19:46.053 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.CommentMapper.insertSelective    : ==>  Preparing: insert into COMMENT ( PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT ) values ( ?, ?, ?, ?, ?, ?, ? ) 
+2019-11-22 23:19:46.053 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.CommentMapper.insertSelective    : ==> Parameters: 1(Long), 2(Integer), 1(Long), 1574435986051(Long), 1574435986051(Long), 0(Long), 没问题(String)
+2019-11-22 23:19:46.053 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.CommentMapper.insertSelective    : <==    Updates: 1
+2019-11-22 23:19:46.054 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.C.incCommentCount                : ==>  Preparing: update COMMENT SET COMMENT_COUNT = COMMENT_COUNT + ? where id = ? 
+2019-11-22 23:19:46.054 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.C.incCommentCount                : ==> Parameters: 1(Integer), 1(Long)
+2019-11-22 23:19:46.054 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.C.incCommentCount                : <==    Updates: 1
+2019-11-22 23:19:46.079 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.079 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.079 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.079 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.079 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.080 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.080 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.Q.selectByPrimaryKey             : ==>  Preparing: select ID, TITLE, GMT_CREATE, GMT_MODIFIED, CREATOR, COMMENT_COUNT, VIEW_COUNT, LIKE_COUNT, TAG , DESCRIPTION from QUESTION where ID = ? 
+2019-11-22 23:19:46.080 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.Q.selectByPrimaryKey             : ==> Parameters: 1(Long)
+2019-11-22 23:19:46.080 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.Q.selectByPrimaryKey             : <==      Total: 1
+2019-11-22 23:19:46.080 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-22 23:19:46.081 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-22 23:19:46.081 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-22 23:19:46.081 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.QuestionExtMapper.selectRelated  : ==>  Preparing: select * from QUESTION WHERE id != ? and tag regexp ? 
+2019-11-22 23:19:46.081 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.QuestionExtMapper.selectRelated  : ==> Parameters: 1(Long), Java(String)
+2019-11-22 23:19:46.081 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.QuestionExtMapper.selectRelated  : <==      Total: 0
+2019-11-22 23:19:46.082 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
+2019-11-22 23:19:46.082 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 1(Long), 1(Integer)
+2019-11-22 23:19:46.082 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 1
+2019-11-22 23:19:46.083 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ID in ( ? ) ) 
+2019-11-22 23:19:46.083 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 1(Long)
+2019-11-22 23:19:46.083 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.084 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.QuestionExtMapper.incView   : ==>  Preparing: update QUESTION SET VIEW_COUNT = VIEW_COUNT + ? where id = ? 
+2019-11-22 23:19:46.084 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.QuestionExtMapper.incView   : ==> Parameters: 1(Integer), 1(Long)
+2019-11-22 23:19:46.084 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.QuestionExtMapper.incView   : <==    Updates: 1
+2019-11-22 23:19:46.120 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.120 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.120 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.121 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.122 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.123 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.123 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.123 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.123 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.123 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.123 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.129 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.130 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.130 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.130 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.130 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.130 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.130 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-5] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.134 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:46.226 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:46.226 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:46.226 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:46.227 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:46.227 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:46.228 DEBUG 69060 --- [http-nio-2222-exec-8] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:47.473 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:47.474 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:47.474 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:47.474 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:47.474 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:47.474 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:47.475 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.CommentMapper.selectByExample    : ==>  Preparing: select ID, PARENT_ID, TYPE, COMMENTATOR, GMT_CREATE, GMT_MODIFIED, LIKE_COUNT, CONTENT, COMMENT_COUNT from COMMENT WHERE ( PARENT_ID = ? and TYPE = ? ) order by gmt_create desc 
+2019-11-22 23:19:47.475 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.CommentMapper.selectByExample    : ==> Parameters: 1(Long), 2(Integer)
+2019-11-22 23:19:47.475 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.m.CommentMapper.selectByExample    : <==      Total: 1
+2019-11-22 23:19:47.476 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( ID in ( ? ) ) 
+2019-11-22 23:19:47.476 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: 1(Long)
+2019-11-22 23:19:47.476 DEBUG 69060 --- [http-nio-2222-exec-9] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.295 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:50.295 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:50.295 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.296 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:50.296 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:50.296 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:50.296 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from QUESTION 
+2019-11-22 23:19:50.296 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-11-22 23:19:50.297 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-11-22 23:19:50.297 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : ==>  Preparing: select * from QUESTION order by gmt_create desc limit ?,? 
+2019-11-22 23:19:50.297 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 7(Integer)
+2019-11-22 23:19:50.297 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.Q.selectBySearch                 : <==      Total: 1
+2019-11-22 23:19:50.297 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER where ID = ? 
+2019-11-22 23:19:50.297 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 1(Long)
+2019-11-22 23:19:50.298 DEBUG 69060 --- [http-nio-2222-exec-3] c.o.a.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-11-22 23:19:50.331 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:50.331 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:50.331 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:50.331 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:50.332 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-1] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-10] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-6] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-2] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:50.334 DEBUG 69060 --- [http-nio-2222-exec-7] c.o.a.m.N.countByExample                 : <==      Total: 1
+2019-11-22 23:19:50.411 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==>  Preparing: select ID, ACCOUNT_ID, NAME, TOKEN, GMT_CREATE, GMT_MODIFIED, BIO, AVATAR_URL from USER WHERE ( TOKEN = ? ) 
+2019-11-22 23:19:50.411 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : ==> Parameters: f4fdcb8d-c7d0-4f1a-9f0f-d4be5e592881(String)
+2019-11-22 23:19:50.411 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.mapper.UserMapper.selectByExample  : <==      Total: 1
+2019-11-22 23:19:50.411 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==>  Preparing: select count(*) from NOTIFICATION WHERE ( RECEIVER = ? and RECEIVER = ? and STATUS = ? ) 
+2019-11-22 23:19:50.411 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : ==> Parameters: 1(Long), 1(Long), 0(Integer)
+2019-11-22 23:19:50.411 DEBUG 69060 --- [http-nio-2222-exec-4] c.o.a.m.N.countByExample                 : <==      Total: 1
