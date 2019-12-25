@@ -33,9 +33,9 @@
         <profile>
             <id>pro</id>
             <properties>
-                <db.url>jdbc:mysql://</db.url>
+                <db.url>jdbc:mysql://localhost:3306/ArCanoe</db.url>
                 <db.user>root</db.user>
-                <db.password>xxx</db.password>
+                <db.password>13420105766</db.password>
             </properties>
         </profile>
     </profiles>
