@@ -14,10 +14,10 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
          th:if="${#lists.size(#httpServletRequest.getServletContext().getAttribute('SIDE')) != 0}"
          th:each="ad : ${#httpServletRequest.getServletContext().getAttribute('SIDE')}">
-            <a th:href="${ad.url}"  th:onclick="clickNav([[${ad.title}]])"
-               target="_blank">
-                <img class="img-thumbnail" th:src="${ad.image}">
-            </a>
+            <!--<a th:href="${ad.url}"  th:onclick="clickNav([[${ad.title}]])"-->
+               <!--target="_blank">-->
+                <img class="img-rounded " style="float: right" th:src="${ad.image}">
+            <!--</a>-->
     </div>
     <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 side"-->
          <!--th:if="${#lists.size(#httpServletRequest.getServletContext().getAttribute('SIDE')) == 0}">-->

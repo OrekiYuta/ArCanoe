@@ -11,7 +11,68 @@
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <h2><span th:text="${sectionName}"></span></h2>
             <hr>
-            <div class="12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'questions'}">
+            <!--我的信息-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'information'}">
+                <form class="form-horizontal" action="/information" method="post">
+                    <input type="hidden" name="user_id" th:value="${userId}">
+                    <input type="hidden" name="user_token"  th:value="${userToken}">
+                    <input type="hidden" name="user_accountId"  th:value="${userAccountId}">
+                    <input type="hidden" name="user_avatarUrl"  th:value="${userAvatarUrl}">
+                    <input type="hidden" name="user_gmtGreate"  th:value="${userGmtCreate}">
+                    <input type="hidden" name="user_getModified"  th:value="${userGmtModified}">
+
+
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">ID：</label>
+                        <div class="col-sm-10">
+                            <label type="text" class="control-label"  id="user_id" th:text="${userId}"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">AccountID：</label>
+                        <div class="col-sm-10">
+                            <label type="text" class="control-label" th:text="${userAccountId}"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label" >姓名：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="user_name" name="user_name" th:value="${userName}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label" >简介：</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control"  id="user_bio" name="user_bio" th:value="${userBio}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">头像：</label>
+                        <div class="col-sm-10">
+                            <img class="media-object img-thumbnail " th:src="${userAvatarUrl}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">账户创建时间：</label>
+                        <div class="col-sm-10">
+                            <label type="text" class="control-label"  th:text="${#dates.format(userGmtCreate,'yyyy-MM-dd HH:mm')}"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-sm-2 control-label">上次信息修改时间：</label>
+                        <div class="col-sm-10">
+                            <label type="text" class="control-label"  th:text="${#dates.format(userGmtModified,'yyyy-MM-dd HH:mm')}"></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-right" >Save</button>
+                </form>
+
+
+
+
+            </div>
+            <!--已发布的问题-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'questions'}">
                 <div class="media"  th:each="question : ${ pagination.data }">
                     <div class="media-left">
                         <a href="#">
@@ -37,8 +98,39 @@
                     </div>
                 </div>
                 <hr>
+                <!--分页-->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li th:if="${pagination.showFirstPage}" >
+                                <a th:href="@{'/profile/'+${section}(page=${1})}" aria-label="Previous">
+                                    <span aria-hidden="true">&lt;&lt;</span>
+                                </a>
+                            </li>
+                            <li th:if="${pagination.showPrevious}" >
+                                <a th:href="@{'/profile/'+${section}(page=${pagination.page - 1})}" aria-label="Previous">
+                                    <span aria-hidden="true">&lt;</span>
+                                </a>
+                            </li>
+                            <li th:each="page : ${pagination.pages}" th:class="${pagination.page == page}? 'active':''">
+                                <a th:href="@{'/profile/'+${section}(page=${page})}" th:text="${page}"></a>
+                            </li>
+                            <li th:if="${pagination.showNext}">
+                                <a th:href="@{'/profile/'+${section}(page=${pagination.page+1})}" aria-label="Next">
+                                    <span aria-hidden="true">&gt;</span>
+                                </a>
+                            </li>
+                            <li th:if="${pagination.showEndPage}">
+                                <a  th:href="@{'/profile/'+${section}(page=${pagination.totalPage})}" aria-label="Next">
+                                    <span aria-hidden="true">&gt;&gt;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
+            <!--收到回复-->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
                 <div class="media"  th:each="notification : ${ pagination.data }">
                     <!--<div class="media-left">-->
                         <!--<a href="#">-->
@@ -59,43 +151,51 @@
                     </div>
                 </div>
                 <hr>
+                <!--分页-->
+                <div class="12 col-md-12 col-sm-12 col-xs-12">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li th:if="${pagination.showFirstPage}" >
+                                <a th:href="@{'/profile/'+${section}(page=${1})}" aria-label="Previous">
+                                    <span aria-hidden="true">&lt;&lt;</span>
+                                </a>
+                            </li>
+                            <li th:if="${pagination.showPrevious}" >
+                                <a th:href="@{'/profile/'+${section}(page=${pagination.page - 1})}" aria-label="Previous">
+                                    <span aria-hidden="true">&lt;</span>
+                                </a>
+                            </li>
+                            <li th:each="page : ${pagination.pages}" th:class="${pagination.page == page}? 'active':''">
+                                <a th:href="@{'/profile/'+${section}(page=${page})}" th:text="${page}"></a>
+                            </li>
+                            <li th:if="${pagination.showNext}">
+                                <a th:href="@{'/profile/'+${section}(page=${pagination.page+1})}" aria-label="Next">
+                                    <span aria-hidden="true">&gt;</span>
+                                </a>
+                            </li>
+                            <li th:if="${pagination.showEndPage}">
+                                <a  th:href="@{'/profile/'+${section}(page=${pagination.totalPage})}" aria-label="Next">
+                                    <span aria-hidden="true">&gt;&gt;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            <div class="12 col-md-12 col-sm-12 col-xs-12">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li th:if="${pagination.showFirstPage}" >
-                            <a th:href="@{'/profile/'+${section}(page=${1})}" aria-label="Previous">
-                                <span aria-hidden="true">&lt;&lt;</span>
-                            </a>
-                        </li>
-                        <li th:if="${pagination.showPrevious}" >
-                            <a th:href="@{'/profile/'+${section}(page=${pagination.page - 1})}" aria-label="Previous">
-                                <span aria-hidden="true">&lt;</span>
-                            </a>
-                        </li>
-                        <li th:each="page : ${pagination.pages}" th:class="${pagination.page == page}? 'active':''">
-                            <a th:href="@{'/profile/'+${section}(page=${page})}" th:text="${page}"></a>
-                        </li>
-                        <li th:if="${pagination.showNext}">
-                            <a th:href="@{'/profile/'+${section}(page=${pagination.page+1})}" aria-label="Next">
-                                <span aria-hidden="true">&gt;</span>
-                            </a>
-                        </li>
-                        <li th:if="${pagination.showEndPage}">
-                            <a  th:href="@{'/profile/'+${section}(page=${pagination.totalPage})}" aria-label="Next">
-                                <span aria-hidden="true">&gt;&gt;</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+
+
+
         </div>
+
+
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="list-group section">
+                <a href="/profile/information"  th:class="${section == 'information'}? 'list-group-item active':'list-group-item'">Information</a>
                 <a href="/profile/questions" th:class="${section == 'questions'}? 'list-group-item active':'list-group-item'">My issue</a>
                 <a href="/profile/replies" th:class="${section == 'replies'}? 'list-group-item active':'list-group-item'">Latest Reply
                     <span class="badge" th:text="${session.unreadCount}"></span>
                 </a>
+
             </div>
         </div>
     </div>

@@ -34,10 +34,11 @@ public class UserService {
 //            dbUser.setToken(user.getToken());
 
             User updateUser = new User();
-            updateUser.setGmtCreate(System.currentTimeMillis());
+            updateUser.setGmtModified(System.currentTimeMillis());
             updateUser.setName(user.getName());
             updateUser.setAvatarUrl(user.getAvatarUrl());
             updateUser.setToken(user.getToken());
+            updateUser.setBio(user.getBio());
             UserExample example = new UserExample();
             example.createCriteria()
                     .andIdEqualTo(dbUser.getId());
@@ -45,4 +46,6 @@ public class UserService {
 //            userMapper.update(dbUser);
         }
     }
+
+
 }

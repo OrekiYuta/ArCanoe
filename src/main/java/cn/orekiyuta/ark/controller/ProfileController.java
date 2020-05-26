@@ -1,9 +1,11 @@
 package cn.orekiyuta.ark.controller;
 
+import cn.orekiyuta.ark.dto.GithubUser;
 import cn.orekiyuta.ark.dto.PaginationDTO;
 import cn.orekiyuta.ark.model.User;
 import cn.orekiyuta.ark.service.NotificationService;
 import cn.orekiyuta.ark.service.QuestionService;
+import cn.orekiyuta.ark.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +26,9 @@ public class ProfileController {
 
     @Autowired
     private NotificationService notificationService;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/profile/{action}")
     public  String profile(HttpServletRequest request,
@@ -48,7 +53,7 @@ public class ProfileController {
 //            Long unreadCount = notificationService.unreadCount(user.getId());
 //            model.addAttribute("unreadCount",unreadCount);
 
-        }else  if ("replies".equals(action)){
+        }else if ("replies".equals(action)){
             PaginationDTO paginationDTO = notificationService.list(user.getId(), page, size);
             model.addAttribute("section","replies");
             model.addAttribute("sectionName","Latest Reply");
@@ -56,6 +61,19 @@ public class ProfileController {
 
 //            Long unreadCount = notificationService.unreadCount(user.getId());
 //            model.addAttribute("unreadCount",unreadCount);
+
+        }else if("information".equals(action)){
+            model.addAttribute("section","information");
+            model.addAttribute("sectionName","Information");
+            model.addAttribute("userId",user.getId());
+            model.addAttribute("userAccountId",user.getAccountId());
+            model.addAttribute("userName",user.getName());
+            model.addAttribute("userToken",user.getToken());
+            model.addAttribute("userGmtCreate",user.getGmtCreate());
+            model.addAttribute("userGmtModified",user.getGmtModified());
+            model.addAttribute("userBio",user.getBio());
+            model.addAttribute("userAvatarUrl",user.getAvatarUrl());
+
 
         }
 

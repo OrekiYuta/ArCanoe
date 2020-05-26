@@ -13,6 +13,45 @@ function comment(e) {
     comment2target(commentId, 2, content);
 }
 
+// function SaveInformation() {
+//     var userId = $("user_id").val();
+//     var userName = $("user_name").val();
+//     var userBio = $("user_bio").val();
+//     var userAccountId = $("user_accountId").val();
+//     updateInformation(userId,userName,userBio);
+// }
+//
+// function updateInformation(userId,userName,userBio,userAccountId) {
+//     $.ajax({
+//         type:"POST",
+//         url:"/Information",
+//         contentType:"application/json",
+//         data:JSON.stringify({
+//             "userId":userId,
+//             "userName":userName,
+//             "userBio":userBio,
+//             "userAccountId":userAccountId
+//         }),
+//         success: function (response) {
+//             if(response.code == 200){
+//                 window.location.reload();
+//                 // $("#comment_content").hide();
+//             }else {
+//                 if (response.code == 2003) {
+//                     var isAccepted = confirm(response.message);
+//                     if(isAccepted){
+//                         window.open("https://github.com/login/oauth/authorize?client_id=78df81e05d037ebe3815&rediret_url=http://localhost:2222/callback&scope=user&state=1");
+//                         window.localStorage.setItem("closable",true);
+//                     }
+//                 }else {
+//                     alert(response.message);
+//                 }
+//             }
+//             console.log(response);
+//         },
+//         dataType:"json"
+//     });
+// }
 /*
 * 展开二级评论
 */
