@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Publish-ArCanoe</title>
+    <title>Issue</title>
     <head th:insert="~{import::head}"></head>
     <head th:insert="~{import::markdown}"></head>
 </head>
@@ -16,7 +16,7 @@
             <form action="/publish" method="post">
                 <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
-                    <label for="title" autocomplete="off">Question-Title</label>
+                    <label for="title" autocomplete="off">Title</label>
                     <input type="text" class="form-control" th:value="${title}" id="title"
                            name="title" placeholder="Simple Description">
                 </div>
@@ -29,7 +29,7 @@
                     $(function() {
                         var editor = editormd("question-editor", {
                             width  : "100%",
-                            height : "700px",
+                            height : "500px",
                             path   : "/js/lib/",
                             delay  : 0,
                             watch  : false,
@@ -41,7 +41,7 @@
                 </script>
 
                 <div class="form-group">
-                    <label for="title">Add-Tag</label>
+                    <label for="title">Add Tag</label>
                     <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag" autocomplete="off"
                            placeholder="Enter tag ,use chinese comma separated" onclick="showSelectTag()">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 tag-tips" id="selectTag">
@@ -74,17 +74,28 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-success btn-right">Commit</button>
+                <button type="submit" class="btn btn-success btn-right">Submit</button>
             </form>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <h3>Problem initiation guide</h3>
             <ul>
-                <li>Question title: Please describe your issue in a streamlined language, no more than 25 words.</li>
-                <li>Question Supplement: Supplement your question details in detail, and make sure the problem description is clear and intuitive, and provide some relevant information.</li>
-                <li>Select tags: Select one or more suitable tags, separated by commas, each tag no more than 10 words.</li>
+                <li>Title: Please describe your issue in a streamlined language, no more than 25 words.</li>
+                <li>Description: Supplement your question details in detail, and make sure the problem description is clear and intuitive, and provide some relevant information.</li>
+                <li>Tags: Select one or more suitable tags, separated by chinese commas.</li>
             </ul>
+            <hr>
+            <h3>提问指引</h3>
+            <ul>
+                <li>标题：请使用精简的语言（不超过25个字）描述您的问题。</li>
+                <li>描述：详细补充问题详细信息，确保问题描述清晰直观，并提供一些相关信息。</li>
+                <li>标签：选择一个或多个合适的标签，以中文逗号分隔。</li>
+            </ul>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                 th:insert="~{side :: side}">
+            </div>
         </div>
+
     </div>
 </div>
 <div th:insert="~{footer :: foot}"></div>

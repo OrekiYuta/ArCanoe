@@ -23,18 +23,16 @@
             <hr>
             <div class="media"  th:each="question : ${ pagination.data }">
                 <div class="media-left">
-                    <a href="#">
+                    <a href="/profile/information">
                         <img class="media-object img-circle avatar-wh"
                              th:src="${question.user.avatarUrl}">
                     </a>
-
                 </div>
-
                 <div class="media-body" >
                     <h4 class="media-heading" >
                         <a th:href="@{'/question/'+${question.id}}" th:text="${question.title} "></a>
                     </h4>
-                    <!--<span th:text="${question.description}"></span>-->
+                    <span th:text="${#strings.abbreviate(question.description,50)}"></span>
                     <span class="text-desc"><br>
                         Reply: <span th:text="${question.commentCount}"></span>  •
                         Views: <span th:text="${question.viewCount}"></span>  •
@@ -74,7 +72,6 @@
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"
                  th:insert="~{side :: side}">
-
             </div>
             <!--<hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

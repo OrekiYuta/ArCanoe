@@ -9,10 +9,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -42,8 +40,22 @@ public class PublishController {
     public  String publish(Model model){
         model.addAttribute("tags", TagCache.get());
         return "publish";
+
     }
 
+    @RequestMapping("/delete")
+    public String delete(Long id,Model model){
+        if(id != null) {
+            questionService.delete(id);
+            return "redirect:/profile/questions";
+        }else {
+
+            model.addAttribute("error", "question does not exist!");
+            return "redirect:/profile/questions";
+        }
+
+
+    }
 
     @PostMapping("/publish")
     public String doPublish(

@@ -180,8 +180,17 @@ public class QuestionService {
                     .andIdEqualTo(question.getId());
             int updated = questionMapper.updateByExampleSelective(updateQuestion, example);
             if (updated != 1){
-                throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
+
             }
+        }
+
+    }
+
+    public void delete(Long id){
+        if (id != null ){
+            questionMapper.deleteByPrimaryKey(id);
+        }else {
+            throw new CustomizeException(CustomizeErrorCode.QUESTION_NOT_FOUND);
         }
 
     }

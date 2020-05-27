@@ -21,7 +21,7 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li th:if="${session.user !=null}">
-                        <a href="/publish">Put question</a>
+                        <a href="/publish">Issue</a>
                     </li>
                     <li th:if="${session.user !=null}">
                         <a href="/profile/replies">Notice: <span class="badge" th:text="${session.unreadCount}"></span></a>
@@ -32,8 +32,8 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="/profile/information/">Information</a></li>
-                            <li><a href="/profile/questions/">Issue</a></li>
+                            <li><a href="/profile/information">Information</a></li>
+                            <li><a href="/profile/questions">My Issue</a></li>
                             <li><a href="/logout">Log out</a></li>
                         </ul>
                     </li>

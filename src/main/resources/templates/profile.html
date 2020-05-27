@@ -81,16 +81,20 @@
                         </a>
                     </div>
 
-                    <div class="media-body" >
+                     <div class="media-body" >
                         <a th:href="@{'/question/'+${question.id}}">
                             <h4 class="media-heading" th:text="${question.title}"></h4>
                         </a>
-                        <br>
-                        <span class="text-desc">
-                         <a th:href="@{'/publish/'+${question.id}}" class="ark-menu "
+                         <a th:href="@{/delete(id=${question.id})}" class="btn btn-danger issuebtn"
                             th:if="${session.user !=null && session.user.id ==question.creator}">
-                             <span class="glyphicon glyphicon-edit " aria-hidden="true"></span>Edit •
+                            Delete
                          </a>
+                        <a th:href="@{'/publish/'+${question.id}}" class="btn btn-info issuebtn"
+                           th:if="${session.user !=null && session.user.id ==question.creator}">
+                            Edit
+                        </a>
+                        <br>
+                        <span class="text-desc" style="float: left">
                         Reply: <span th:text="${question.commentCount}"></span> •
                         Views: <span th:text="${question.viewCount}"></span> •
                         <span th:text="${#dates.format(question.gmtCreate,'yyyy-MM-dd HH:mm')}"></span>
