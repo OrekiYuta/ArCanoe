@@ -16,27 +16,27 @@ public class TagCache {
         List<TagDTO> tagDTOS = new ArrayList<>();
         TagDTO program = new TagDTO();
         program.setCategoryName("开发语言");
-        program.setTags(Arrays.asList("Java","Golang","C","CPP","C#","JavaScript","TypeScript","Python","Node.js"));
+        program.setTags(Arrays.asList("Java","Golang","C","CPP","C#","JavaScript","TypeScript","Python","Node.js","Others"));
         tagDTOS.add(program);
 
         TagDTO framework = new TagDTO();
         framework.setCategoryName("平台框架");
-        framework.setTags(Arrays.asList("Srping","Angular","React","Vue","Flask","Django"));
+        framework.setTags(Arrays.asList("Spring","Angular","React","Vue","Flask","Django","Others"));
         tagDTOS.add(framework);
 
         TagDTO server = new TagDTO();
         server.setCategoryName("服务器");
-        server.setTags(Arrays.asList("Linux","Nginx","Unix","Ubuntu","CentOS"));
+        server.setTags(Arrays.asList("Linux","Nginx","Unix","Ubuntu","CentOS","Others"));
         tagDTOS.add(server);
 
         TagDTO db = new TagDTO();
         db.setCategoryName("数据库");
-        db.setTags(Arrays.asList("MySQL","Redis","Mongodb","Oracle","SqlServer","H2"));
+        db.setTags(Arrays.asList("MySQL","Redis","Mongodb","Oracle","SqlServer","H2","Others"));
         tagDTOS.add(db);
 
         TagDTO tool = new TagDTO();
         tool.setCategoryName("开发工具");
-        tool.setTags(Arrays.asList("Git","Svn","VSCode","Vim","VisualStudio","IDEA"));
+        tool.setTags(Arrays.asList("Git","Svn","VSCode","Vim","VisualStudio","IDEA","Others"));
         tagDTOS.add(tool);
 
         return tagDTOS;

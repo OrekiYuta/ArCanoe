@@ -152,8 +152,9 @@
                     <div class="media-body" >
                         <h5 class="media-heading" >
                             <span th:href="@{'/question/'+${question.id}}" th:text="${question.user.name}"></span>
+                            <hr/>
+                            <p th:text="${question.user.bio}"></p>
                         </h5>
-                        </span>
                     </div>
                 </div>
             </div>

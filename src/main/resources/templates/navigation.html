@@ -5,10 +5,10 @@
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Ark</span>
+                <button type="button" class="navbar-toggle collapsed navbutton" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Look!</span>
                 </button>
-                <a class="navbar-brand" href="/">Ark</a>
+                <a class="navbar-brand" href="/">BBS Technology Forum Based on Springboot</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -40,6 +40,7 @@
                     <li th:if="${session.user == null}">
                         <!--<a href=" https://github.com/login/oauth/authorize?client_id=78df81e05d037ebe3815&rediret_url=http://localhost:2222/callback&scope=user&state=1">Login</a>-->
                         <a th:href=" @{https://github.com/login/oauth/authorize(client_id='78df81e05d037ebe3815',rediret_url=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state=1)}">Login</a>
+                        <!--<a th:href=" @{https://github.com/login/oauth/authorize(client_id='3ed301c63be7957988b1',rediret_url=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state=1)}">Login</a>-->
                     </li>
                 </ul>
             </div>

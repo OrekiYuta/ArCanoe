@@ -105,3 +105,14 @@ body{
     color: #666666;
     text-align: center;
 }
+
+.navbutton{
+    margin-top: 10px;
+    margin-right: 10px;
+    border: aliceblue;
+    width: 50px;
+    height: 30px;
+    background-image: url("../images/navbutton.png");
+    background-repeat: round;
+
+}
