@@ -3,6 +3,8 @@ package cn.orekiyuta.ark.mapper;
 import cn.orekiyuta.ark.model.Notification;
 import cn.orekiyuta.ark.model.NotificationExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.RowBounds;
 
@@ -102,4 +104,7 @@ public interface NotificationMapper {
      * @mbg.generated Mon Nov 25 19:06:03 CST 2019
      */
     int updateByPrimaryKey(Notification record);
+
+    @Delete("delete from notification where outerid = #{questionId}")
+    void deleteByQuestionId(@Param("questionId") Long id);
 }

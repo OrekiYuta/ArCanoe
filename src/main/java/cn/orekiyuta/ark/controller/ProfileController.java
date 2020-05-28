@@ -45,7 +45,7 @@ public class ProfileController {
 
         if ("questions".equals(action)){
             model.addAttribute("section","questions");
-            model.addAttribute("sectionName","My issue");
+            model.addAttribute("sectionName","My Issue");
 
             PaginationDTO paginationDTO = questionService.list(user.getId(), page, size);
             model.addAttribute("pagination",paginationDTO);

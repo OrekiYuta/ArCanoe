@@ -9,7 +9,13 @@
 <div class="container-fluid main profile">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h2><span th:text="${sectionName}"></span></h2>
+            <h2>
+                <span th:switch="${sectionName}">
+                    <img th:case="'Information'" class="img-rounded " src="/images/Information.png">
+                    <img th:case="'My Issue'" class="img-rounded " src="/images/My Issue.png">
+                    <img th:case="'Latest Reply'" class="img-rounded " src="/images/Latest Reply.png">
+                </span>
+                <span th:text="${sectionName}"></span></h2>
             <hr>
             <!--我的信息-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'information'}">
@@ -37,13 +43,13 @@
                     <div class="form-group">
                         <label  class="col-sm-2 control-label" >姓名：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="user_name" name="user_name" th:value="${userName}">
+                            <input type="text" class="form-control" id="user_name" name="user_name" th:value="${userName}" style="width: 300px">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-2 control-label" >简介：</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control"  id="user_bio" name="user_bio" th:value="${userBio}">
+                            <input type="text" class="form-control"  id="user_bio" name="user_bio" th:value="${userBio}" style="width: 300px">
                         </div>
                     </div>
                     <div class="form-group">
@@ -73,7 +79,8 @@
             </div>
             <!--已发布的问题-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'questions'}">
-                <div class="media"  th:each="question : ${ pagination.data }">
+                <div th:if="${pagination.data.size()}!=0" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="media" style="margin-top: 10px" th:each="question : ${ pagination.data }">
                     <div class="media-left">
                         <a href="#">
                             <img class="media-object img-circle avatar-wh"
@@ -86,8 +93,10 @@
                             <h4 class="media-heading" th:text="${question.title}"></h4>
                         </a>
                          <a th:href="@{/delete(id=${question.id})}" class="btn btn-danger issuebtn"
-                            th:if="${session.user !=null && session.user.id ==question.creator}">
-                            Delete
+                            th:if="${session.user !=null && session.user.id ==question.creator}"
+                            onclick="if (confirm('Do you really want to delete this  Issue ?')==false) return false ;" >
+
+                             Delete
                          </a>
                         <a th:href="@{'/publish/'+${question.id}}" class="btn btn-info issuebtn"
                            th:if="${session.user !=null && session.user.id ==question.creator}">
@@ -101,7 +110,11 @@
                     </span>
                     </div>
                 </div>
-                <hr>
+                </div>
+                <div th:if="${pagination.data.size()} ==0" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img class="img-rounded col-lg-12 col-md-12 col-sm-12 col-xs-12" src="/images/coderain.png">
+                </div>
+                <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!--分页-->
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <nav aria-label="Page navigation">
@@ -135,26 +148,39 @@
             </div>
             <!--收到回复-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'replies'}">
-                <div class="media"  th:each="notification : ${ pagination.data }">
-                    <!--<div class="media-left">-->
-                        <!--<a href="#">-->
+                <div th:if="${pagination.data}!= null" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                        <div class="media"  th:each="notification : ${ pagination.data }">
+                            <!--<div class="media-left">-->
+                            <!--<a href="#">-->
                             <!--<img class="media-object img-circle avatar-wh"-->
-                                 <!--th:src="${comment.user.avatarUrl}">-->
-                        <!--</a>-->
-                    <!--</div>-->
+                            <!--th:src="${comment.user.avatarUrl}">-->
+                            <!--</a>-->
+                            <!--</div>-->
+                            <div >
+                                <!--<span th:if="${pagination.data.contains(notification)}">-->
+                                    <div class="media-body" >
+                                    <p class="media-heading">
+                                        <img class="img-rounded " src="/images/notice.png">
+                                        <span th:text="${notification.notifierName + ' - ' + notification.typeName + ' - ' }"></span>
+                                        <a th:href="@{'/notification/'+${notification.id}}"
+                                           th:text="${notification.outerTitle}">
+                                        </a>
+                                        <span class="btn label-warning pull-right issuebtn" th:if="${notification.status == 0}" style="cursor:default;">Unread</span>
+                                        <a class="btn btn-info issuebtn" th:if="${notification.status == 0}"th:href="@{/read(id=${notification.id})}">Mark as read</a>
+                                        <span class="btn label-success pull-right issuebtn" th:if="${notification.status == 1}" style="cursor:default;">Read</span>
+                                    </p>
+                                </div>
+                                <!--</span>-->
+                            </div>
+                        </div>
 
-                    <div class="media-body" >
-                        <p class="media-heading">
-                            <span th:text="${notification.notifierName + ' - ' + notification.typeName + ' - ' }"></span>
-                            <a th:href="@{'/notification/'+${notification.id}}"
-                                    th:text="${notification.outerTitle}">
-
-                            </a>
-                            <span class="label label-danger pull-right" th:if="${notification.status == 0}">Unread</span>
-                        </p>
-                    </div>
                 </div>
-                <hr>
+                <div th:if="${pagination.data}==null" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <img class="img-rounded col-lg-12 col-md-12 col-sm-12 col-xs-12" src="/images/maxresdefault.jpg">
+                </div>
+
+                <hr class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <!--分页-->
                 <div class="12 col-md-12 col-sm-12 col-xs-12">
                     <nav aria-label="Page navigation">
@@ -187,20 +213,30 @@
                 </div>
             </div>
 
-
-
         </div>
 
 
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <div class="list-group section">
-                <a href="/profile/information"  th:class="${section == 'information'}? 'list-group-item active':'list-group-item'">Information</a>
-                <a href="/profile/questions" th:class="${section == 'questions'}? 'list-group-item active':'list-group-item'">My issue</a>
-                <a href="/profile/replies" th:class="${section == 'replies'}? 'list-group-item active':'list-group-item'">Latest Reply
-                    <span class="badge" th:text="${session.unreadCount}"></span>
-                </a>
-
-            </div>
+            <!--<div class="list-group section">-->
+                <!--<a href="/profile/information"  th:class="${section == 'information'}? 'list-group-item active':'list-group-item'">Information</a>-->
+                <!--<a href="/profile/questions" th:class="${section == 'questions'}? 'list-group-item active':'list-group-item'">My issue</a>-->
+                <!--<a href="/profile/replies" th:class="${section == 'replies'}? 'list-group-item active':'list-group-item'">Latest Reply-->
+                    <!--<span class="badge" th:text="${session.unreadCount}"></span>-->
+                <!--</a>-->
+            <!--</div>-->
+            <ul class="nav nav-pills nav-stacked section">
+                <li role="presentation" th:class="${section == 'information'}? 'active':''">
+                    <a href="/profile/information" >Information</a>
+                </li>
+                <li role="presentation" th:class="${section == 'questions'}? 'active':''">
+                    <a href="/profile/questions" >My Issue</a>
+                </li>
+                <li role="presentation" th:class="${section == 'replies'}? 'active':''">
+                    <a href="/profile/replies">Latest Reply
+                        <span class="badge" th:text="${session.unreadCount}"></span>
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </div>

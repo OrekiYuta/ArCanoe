@@ -4,6 +4,7 @@ import cn.orekiyuta.ark.cache.TagCache;
 import cn.orekiyuta.ark.dto.QuestionDTO;
 import cn.orekiyuta.ark.model.Question;
 import cn.orekiyuta.ark.model.User;
+import cn.orekiyuta.ark.service.NotificationService;
 import cn.orekiyuta.ark.service.QuestionService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,9 @@ public class PublishController {
 
     @Autowired
     private QuestionService questionService;
+
+    @Autowired
+    private NotificationService notificationService;
 
     @GetMapping("/publish/{id}")
     public String edit(@PathVariable(name = "id") Long id,
@@ -47,6 +51,7 @@ public class PublishController {
     public String delete(Long id,Model model){
         if(id != null) {
             questionService.delete(id);
+            notificationService.deleteByQuestionId(id);
             return "redirect:/profile/questions";
         }else {
 

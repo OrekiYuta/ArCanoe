@@ -115,4 +115,9 @@ public class NotificationService {
 
         return notificationDTO;
     }
+
+    public void deleteByQuestionId(Long id) {
+        notificationMapper.deleteByQuestionId(id);
+
+    }
 }

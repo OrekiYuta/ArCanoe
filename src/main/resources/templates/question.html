@@ -15,7 +15,7 @@
 
             <!--问题展示和操作-->
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 edit-margin" >
-                <h3 class="title-style"><span th:text="${question.title}"></span></h3>
+                <h3 class="title-style"><img class="img-rounded " src="/images/questions.png"><span th:text="${question.title}"></span></h3>
                 <span class="text-desc">
                       Author : <span th:text="${question.user.name}"></span> /
                       Views : <span th:text="${question.viewCount}"></span> /
@@ -58,7 +58,7 @@
                    th:if="${session.user !=null && session.user.id ==question.creator}">
                     <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit
                 </a>
-                <a th:href="@{/}"></a>
+
             </div>
 
             <!--回复数分割-->
@@ -66,7 +66,7 @@
                 <h4 class="pull-left">
                     Replies : <span th:text="${question.commentCount}"></span>
                 </h4>
-                <hr>
+                <!--<hr>-->
                 <!--广告位-->
                 <!--<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"-->
                      <!--th:each="ad : ${#httpServletRequest.getServletContext().getAttribute('FOOTER')}">-->
