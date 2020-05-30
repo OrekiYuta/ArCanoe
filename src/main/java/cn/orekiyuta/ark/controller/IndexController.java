@@ -36,10 +36,13 @@ public class IndexController {
 
         PaginationDTO pagination =questionService.list(search,tag,page,size);
         List<String> tags = hotTagCache.getHots();
+
+
         model.addAttribute("pagination",pagination);
         model.addAttribute("search",search);
         model.addAttribute("tag",tag);
         model.addAttribute("tags",tags);
+
         return "index";
     }
 }

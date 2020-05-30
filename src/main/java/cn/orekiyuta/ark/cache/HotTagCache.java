@@ -13,9 +13,10 @@ import java.util.*;
 public class HotTagCache {
 
     private List<String> hots =new ArrayList<>();
+    private List<Integer> hotP =new ArrayList<>();
 
     public void updateTags(Map<String,Integer> tags){
-        int max=10;
+        int max=20;
         PriorityQueue<HotTagDTO> priorityQueue = new PriorityQueue<>(max); //优先队列
 
         tags.forEach((name,priority)->{
@@ -34,18 +35,25 @@ public class HotTagCache {
         });
 
         List<String> sortedTags = new ArrayList<>();
+        List<Integer> sortedPriority = new ArrayList<>();//-A
 
         HotTagDTO poll = priorityQueue.poll();
 //        hots.add(poll.getName());
         while (poll != null){
             sortedTags.add(0,poll.getName());
+            sortedPriority.add(0,poll.getPriority());//-A
             poll = priorityQueue.poll();
         }
         hots = sortedTags;
+        hotP = sortedPriority;
     }
 
     public List<String> getHots() {
         return hots;
+    }
+
+    public List<Integer> getHotP(){
+        return hotP;
     }
 
     public void setHots(List<String> hots) {

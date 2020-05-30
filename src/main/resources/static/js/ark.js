@@ -186,3 +186,9 @@ function showSelectTag() {
     $('#selectTag').show();
 }
 
+function navSwitch() {
+
+
+    document.getElementById("H").setAttribute("class"," ");
+
+}
