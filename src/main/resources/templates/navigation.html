@@ -42,8 +42,8 @@
                     </li>
                     <li th:if="${session.user == null}">
                         <!--<a href=" https://github.com/login/oauth/authorize?client_id=78df81e05d037ebe3815&rediret_url=http://localhost:2222/callback&scope=user&state=1">Login</a>-->
-                        <a th:href=" @{https://github.com/login/oauth/authorize(client_id='78df81e05d037ebe3815',rediret_url=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state=1)}">Login</a>
-                        <!--<a th:href=" @{https://github.com/login/oauth/authorize(client_id='3ed301c63be7957988b1',rediret_url=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state=1)}">Login</a>-->
+                        <!--<a th:href=" @{https://github.com/login/oauth/authorize(client_id='78df81e05d037ebe3815',rediret_url=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state=1)}">Login</a>-->
+                        <a th:href=" @{https://github.com/login/oauth/authorize(client_id='3ed301c63be7957988b1',rediret_url=${#httpServletRequest.getRequestURL()+'callback'},scope='user',state=1)}">Login</a>
                     </li>
                 </ul>
             </div>
